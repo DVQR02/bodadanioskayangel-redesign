@@ -3,12 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --lavanda-100: #BF90CB;
-  --lavanda-300: #BF90CB;
-  --lavanda-500: #BF90CB;
-  --lavanda-700: #6B3878;
-  --crema: #f4ece9;
-  --tinta: #000000;
+  --paper: #faf8f3;
+  --lavender: #b9a1ce;
+  --lavender-deep: #72539a;
+  --petal: #e9b9bd;
+  --sage: #9baa83;
+  --ivy: #667653;
+  --sky: #afcadb;
+  --gold: #b99b62;
+  --ink: #292523;
+  --crema: var(--paper);
+  --tinta: var(--ink);
 }
 
 html, body {
@@ -18,8 +23,100 @@ html, body {
 }
 
 body {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Arapey', Georgia, serif;
   background-color: var(--crema);
+}
+
+.hero-scene {
+  background:
+    radial-gradient(circle at 50% 36%, rgba(255,255,255,.92) 0 24%, transparent 58%),
+    linear-gradient(180deg, #fbf9f5 0%, #f8f3f5 48%, #faf8f3 100%);
+}
+
+.hero-scene::before,
+.hero-scene::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: clamp(12rem, 36vw, 28rem);
+  height: clamp(18rem, 48vw, 35rem);
+  opacity: .23;
+  filter: blur(28px);
+  border-radius: 48% 52% 58% 42%;
+  pointer-events: none;
+}
+
+.hero-scene::before { left: -14%; top: 9%; background: #d9c9e5; transform: rotate(-12deg); }
+.hero-scene::after { right: -15%; top: 36%; background: #dce4c9; transform: rotate(15deg); }
+
+.hero-wash { position: absolute; width: 9rem; height: 16rem; border-radius: 50%; filter: blur(18px); opacity: .2; }
+.hero-wash-left { left: -4rem; bottom: 10%; background: #e8b9bd; transform: rotate(24deg); }
+.hero-wash-right { right: -4rem; top: 12%; background: #afcadb; transform: rotate(-18deg); }
+
+.hero-kicker {
+  font-family: 'Arapey', Georgia, serif;
+  font-size: .72rem;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: rgba(41,37,35,.68);
+}
+
+.hero-names {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: clamp(.35rem, 2vw, 1.2rem);
+  margin-top: .4rem;
+  font-family: 'Mea Culpa', 'Great Vibes', cursive;
+  font-size: clamp(4rem, 14vw, 8.8rem);
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: .005em;
+  color: var(--ink);
+  text-wrap: nowrap;
+}
+
+.hero-ampersand { color: var(--lavender-deep); font-size: .68em; }
+.hero-art-wrap { width: min(82vw, 31rem); margin: -1rem auto -1.2rem; }
+.hero-art { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 26px rgba(91,69,50,.08)); }
+
+.hero-date {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  color: var(--lavender-deep);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.45rem, 5vw, 2rem);
+  letter-spacing: .16em;
+}
+.hero-date i { display: block; width: 1.5rem; height: 1px; background: rgba(114,83,154,.45); }
+.hero-place { margin-top: .25rem; font-size: .8rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(41,37,35,.62); }
+
+.wedding-button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(114,83,154,.62);
+  border-radius: 999px;
+  padding: .75rem 1.9rem;
+  font-family: 'Arapey', Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--lavender-deep);
+  background: rgba(255,255,255,.52);
+  box-shadow: 0 10px 28px rgba(114,83,154,.08);
+  transition: transform .3s ease, background-color .3s ease, color .3s ease;
+}
+.wedding-button:hover { transform: translateY(-2px); background: var(--lavender-deep); color: white; }
+
+.hero-scroll { display: flex; flex-direction: column; align-items: center; gap: .6rem; font-size: .68rem; letter-spacing: .19em; text-transform: uppercase; color: rgba(41,37,35,.5); }
+.hero-scroll-line { width: 1px; height: 2.4rem; background: linear-gradient(var(--lavender), transparent); animation: scrollBreath 2.4s ease-in-out infinite; }
+@keyframes scrollBreath { 0%,100% { transform: scaleY(.65); opacity: .45; } 50% { transform: scaleY(1); opacity: 1; } }
+
+@media (max-width: 480px) {
+  .hero-names { flex-direction: column; align-items: center; gap: 0; line-height: .72; margin-top: 1rem; }
+  .hero-ampersand { margin: .25rem 0 .05rem; }
+  .hero-art-wrap { width: min(88vw, 25rem); margin-top: -.4rem; }
 }
 
 h1, h2, h3, h4 {

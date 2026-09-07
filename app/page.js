@@ -23,6 +23,20 @@ export default function Home() {
     <>
       <Hero />
 
+      <section id="countdown" data-element-id="countdown" className="countdown-scene">
+        <div className="countdown-transition" aria-hidden="true">
+          <svg viewBox="0 0 1440 150" preserveAspectRatio="none">
+            <path d="M0,70 C210,145 350,12 565,64 C780,116 955,28 1160,65 C1285,88 1370,82 1440,50 L1440,150 L0,150 Z" />
+          </svg>
+        </div>
+        <div className="relative z-10 mx-auto max-w-4xl px-5 pb-24 pt-12 text-center md:pb-32">
+          <p className="countdown-script">Cada día un poquito más cerca</p>
+          <h2 className="countdown-title">Faltan</h2>
+          <Countdown />
+          <p className="countdown-ending">para celebrar juntos</p>
+        </div>
+      </section>
+
       {/* SOBRE NOSOTROS */}
       <Section id="historia">
         <div id="fun-facts" data-element-id="fun_facts" className="grid md:grid-cols-2 gap-6">
@@ -303,12 +317,6 @@ export default function Home() {
 
         <RSVP />
 
-        <div className="mt-16" id="countdown" data-element-id="countdown">
-          <p className="text-center text-xs uppercase tracking-widest text-lavanda-700 mb-4">
-            Ya has confirmado · ahora empieza la cuenta atrás
-          </p>
-          <Countdown />
-        </div>
       </Section>
 
       {/* PLAYLIST */}

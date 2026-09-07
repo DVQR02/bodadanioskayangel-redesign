@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import site from "@/content/site.json";
 import AddToCalendar from "./AddToCalendar";
 
@@ -16,20 +15,9 @@ export default function Hero() {
       </div>
 
       <div className="max-w-3xl animate-fadeUp">
-        <h1 className="mt-2 mb-0 leading-none">
-          <Image
-            src="/images/branding/monograma-danioska-angel.png"
-            alt={`Monograma de ${site.novios.nombres}`}
-            width={1143}
-            height={1022}
-            priority
-            className="w-[78vw] max-w-[430px] h-auto mx-auto"
-          />
+        <h1 className="monogram mt-2 mb-2 leading-none">
+          Danioska y Ángel
         </h1>
-
-        <p className="font-serif text-2xl md:text-3xl text-tinta mb-2">
-          {site.novios.nombres}
-        </p>
 
         <p className="text-sm md:text-base uppercase tracking-[0.4em] text-lavanda-700/80 mt-4">
           {site.fecha.diaSemana} · {site.fecha.legible}

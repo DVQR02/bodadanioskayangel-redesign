@@ -151,6 +151,15 @@ h1, h2, h3, h4 {
   letter-spacing: 0.02em;
 }
 
+/* El PNG actúa como máscara para poder aplicar el color de marca exacto. */
+.navbar-monogram {
+  display: block;
+  flex-shrink: 0;
+  background-color: #6B3878;
+  -webkit-mask: url('/images/branding/monograma-danioska-angel.png') center / contain no-repeat;
+  mask: url('/images/branding/monograma-danioska-angel.png') center / contain no-repeat;
+}
+
 /* Watercolor painted stroke */
 .brush-underline {
   background-image: linear-gradient(transparent 70%, rgba(191,144,203,0.5) 70%);

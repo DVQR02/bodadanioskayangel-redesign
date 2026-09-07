@@ -7,6 +7,7 @@ import FAQAccordion from "@/components/FAQAccordion";
 import MapaLugares from "@/components/MapaLugares";
 import FlagIcon from "@/components/FlagIcon";
 import Playlist from "@/components/Playlist";
+import CouplePortrait from "@/components/CouplePortrait";
 import site from "@/content/site.json";
 import historia from "@/content/historia.json";
 import evento from "@/content/evento.json";
@@ -38,49 +39,8 @@ export default function Home() {
       </section>
 
       {/* SOBRE NOSOTROS */}
-      <Section id="historia">
-        <div id="fun-facts" data-element-id="fun_facts" className="grid md:grid-cols-2 gap-6">
-          <div className="bg-white/70 rounded-3xl border border-lavanda-200 p-6">
-            <h3 className="font-serif text-2xl text-lavanda-700 mb-4">
-              Sobre Dani 🎨
-            </h3>
-            <ul className="space-y-2">
-              {historia.funFacts.dani.map((f, i) => {
-                const isFlag = f.icono === "🇻🇪" || f.icono === "🇪🇸";
-                return (
-                  <li key={i} className="text-tinta/80 flex items-start gap-2">
-                    {isFlag ? (
-                      <FlagIcon country={f.icono === "🇻🇪" ? "VE" : "ES"} className="w-5 h-3 mt-1 rounded-sm shrink-0" />
-                    ) : (
-                      <span className="shrink-0">{f.icono}</span>
-                    )}
-                    <span>{f.texto}</span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className="bg-white/70 rounded-3xl border border-lavanda-200 p-6">
-            <h3 className="font-serif text-2xl text-lavanda-700 mb-4">
-              Sobre Ángel 🎩
-            </h3>
-            <ul className="space-y-2">
-              {historia.funFacts.angel.map((f, i) => {
-                const isFlag = f.icono === "🇻🇪" || f.icono === "🇪🇸";
-                return (
-                  <li key={i} className="text-tinta/80 flex items-start gap-2">
-                    {isFlag ? (
-                      <FlagIcon country={f.icono === "🇻🇪" ? "VE" : "ES"} className="w-5 h-3 mt-1 rounded-sm shrink-0" />
-                    ) : (
-                      <span className="shrink-0">{f.icono}</span>
-                    )}
-                    <span>{f.texto}</span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
+      <Section id="historia" className="about-scene">
+        <CouplePortrait historia={historia} />
       </Section>
 
       {/* EVENTO — solo cronograma */}

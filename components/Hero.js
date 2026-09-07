@@ -1,63 +1,46 @@
 "use client";
 import site from "@/content/site.json";
-import AddToCalendar from "./AddToCalendar";
+import WatercolorMark from "./WatercolorMark";
 
 export default function Hero() {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center justify-center text-center px-4 overflow-hidden pt-20">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-watercolor" />
-        <div className="absolute top-10 left-10 text-3xl opacity-40 animate-float">✨</div>
-        <div className="absolute top-24 right-16 text-2xl opacity-40 animate-sparkle">✨</div>
-        <div className="absolute bottom-32 left-1/4 text-2xl opacity-40 animate-float">🎩</div>
-        <div className="absolute bottom-20 right-1/3 text-2xl opacity-40 animate-sparkle">🎨</div>
-        <div className="absolute top-1/2 right-10 text-3xl opacity-40 animate-float">🐾</div>
-      </div>
+    <section id="inicio" className="hero-scene relative min-h-[100svh] overflow-hidden px-5 pb-10 pt-24 text-center">
+      <div className="hero-wash hero-wash-left" aria-hidden="true" />
+      <div className="hero-wash hero-wash-right" aria-hidden="true" />
 
-      <div className="max-w-3xl animate-fadeUp">
-        <h1 className="monogram mt-2 mb-2 leading-none">
-          Danioska y Ángel
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-8.5rem)] max-w-5xl flex-col items-center justify-center">
+        <p className="hero-kicker animate-fadeUp">Para celebrar la boda de</p>
+
+        <h1 className="hero-names animate-fadeUp">
+          <span>Danioska</span>
+          <span className="hero-ampersand">&amp;</span>
+          <span>Ángel</span>
         </h1>
 
-        <p className="text-sm md:text-base uppercase tracking-[0.4em] text-lavanda-700/80 mt-4">
-          {site.fecha.diaSemana} · {site.fecha.legible}
-        </p>
+        <WatercolorMark className="mt-1 h-8 w-24 text-[#8a6aaa]" />
 
-        <p className="italic text-tinta/70 mt-6 mb-8 max-w-md mx-auto">
-          se casan en {site.lugar.ciudad}. Y quieren verte ahí.
-        </p>
-
-        <div className="mx-auto mb-8 max-w-xl bg-white/70 backdrop-blur border border-lavanda-300 rounded-2xl px-5 py-4 shadow-soft">
-          <p className="text-xs uppercase tracking-widest text-lavanda-700">
-            Fecha límite para confirmar
-          </p>
-          <p className="font-serif text-2xl text-tinta mt-1">
-            {site.fecha.rsvpLimite}
-          </p>
-          <p className="text-xs text-tinta/70 mt-1">
-            Después de esa fecha no podremos cerrar el menú ni el bus.
-          </p>
+        <div className="hero-art-wrap" aria-hidden="true">
+          <img
+            src="/images/decor/ermita-otto-hero.png"
+            alt=""
+            className="hero-art"
+            fetchPriority="high"
+          />
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3">
-          <a
-            href="#rsvp"
-            className="px-6 py-3 rounded-full bg-lavanda-600 text-white hover:bg-lavanda-700 transition shadow-soft"
-          >
-            Confirmar asistencia
-          </a>
-          <a
-            href="#playlist"
-            className="px-6 py-3 rounded-full bg-white/80 border border-lavanda-300 text-lavanda-700 hover:bg-lavanda-50 transition shadow-soft"
-          >
-            🎵 Playlist colaborativa
-          </a>
-          <AddToCalendar />
+        <div className="hero-date animate-fadeUp">
+          <span>02</span><i /> <span>04</span><i /> <span>2027</span>
         </div>
+        <p className="hero-place">Madrid · España</p>
 
-        <p className="mt-10 text-xs uppercase tracking-widest text-tinta/50">
-          ↓ Haz scroll para descubrir el plan
-        </p>
+        <a href="#rsvp" className="wedding-button mt-6">
+          Confirmar asistencia
+        </a>
+
+        <a href="#historia" className="hero-scroll mt-8" aria-label="Descubrir la invitación">
+          <span>Descubre nuestra historia</span>
+          <span className="hero-scroll-line" aria-hidden="true" />
+        </a>
       </div>
     </section>
   );

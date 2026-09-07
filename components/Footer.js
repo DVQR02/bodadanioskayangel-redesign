@@ -25,7 +25,7 @@ export default function Footer() {
           </Link>
         </p>
         <p className="text-xs opacity-70">
-          {site.redes.hashtag} · Hecho con 💜 para Dani y Ángel
+          {site.redes.hashtag} · Hecho con 💜 para Danioska & Ángel
         </p>
       </div>
     </footer>

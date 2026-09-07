@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import site from "@/content/site.json";
 
@@ -33,9 +34,13 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="font-iniciales text-3xl md:text-4xl text-lavanda-700 leading-none tracking-wide">
-            {site.novios.iniciales}
-          </span>
+          <Image
+            src="/images/branding/monograma-danioska-angel.png"
+            alt={`Monograma de ${site.novios.nombres}`}
+            width={1143}
+            height={1022}
+            className="w-11 md:w-12 h-auto"
+          />
           <span className="hidden sm:block text-xs uppercase tracking-[0.3em] text-lavanda-700/70">
             {site.fecha.legible_corto}
           </span>

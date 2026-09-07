@@ -1,8 +1,8 @@
 {
   "novios": {
     "iniciales": "D & A",
-    "nombres": "Dani y Ángel",
-    "ella": "Dani",
+    "nombres": "Danioska & Ángel",
+    "ella": "Danioska",
     "el": "Ángel"
   },
   "fecha": {
@@ -24,7 +24,7 @@
     "email": "daniyangel.boda@ejemplo.com",
     "telefono": "+34 600 000 000",
     "telefonoLabel": "Marta (wedding planner)",
-    "whatsappMensaje": "¡Hola! He visto la web de Dani y Ángel y quiero confirmar mi asistencia."
+    "whatsappMensaje": "¡Hola! He visto la web de Danioska & Ángel y quiero confirmar mi asistencia."
   },
   "formulario": {
     "googleFormId": "1kxV0pGewHV_xf_1e4p8DtgP0J34-85vm7ox6ozk-nDY",
@@ -38,7 +38,7 @@
     "password": "toto2027"
   },
   "redes": {
-    "hashtag": "#DaniYAngel2027",
+    "hashtag": "#DanioskaYAngel2027",
     "spotifyPlaylistUrl": "https://open.spotify.com/playlist/4qha4bxDrKipQLA7lE8Rzk?pt=537e7840fd042bf345a4a79be1d28de3",
     "spotifyPlaylistLabel": "Añade tu canción a la playlist"
   },

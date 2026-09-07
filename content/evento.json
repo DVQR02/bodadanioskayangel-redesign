@@ -3,7 +3,7 @@
   "subtitulo": "Cronograma del 2 de abril de 2027",
   "ceremonia": {
     "nombre": "La Ceremonia",
-    "hora": "12:30 h",
+    "hora": "17:30 h",
     "lugar": "Ermita de la Virgen del Puerto",
     "direccion": "Paseo de la Virgen del Puerto, s/n, 28005 Madrid",
     "descripcion": "Ceremonia íntima en la ermita más coqueta de Madrid, a orillas del Manzanares. Habrá pañuelos: traed los vuestros.",
@@ -11,19 +11,19 @@
     "mapaUrl": "https://www.google.com/maps?q=Ermita+de+la+Virgen+del+Puerto+Madrid&output=embed"
   },
   "coctel": {
-    "nombre": "El Vermú",
-    "hora": "14:00 h",
-    "lugar": "Jardines del Campo del Moro",
-    "direccion": "Paseo de la Virgen del Puerto, 28005 Madrid",
+    "nombre": "El Cóctel",
+    "hora": "19:30 h",
+    "lugar": "Casa de Burgos",
+    "direccion": "C. Principal de Provincias, 3, Moncloa - Aravaca, 28011 Madrid",
     "descripcion": "Vermú, jamón, croquetas y algo de magia mientras saludáis a los novios. Habrá zona a la sombra y superficie accesible.",
     "imagen": "/images/placeholders/coctel-jardines.jpg"
   },
   "banquete": {
     "nombre": "El Banquete",
-    "hora": "16:00 h",
-    "lugar": "Finca La Quinta de Illescas",
-    "direccion": "Carretera de Madrid, km 32, Illescas (Toledo)",
-    "descripcion": "Cena con menú a elegir (carne, pescado, vegetariano, vegano). Atención a las alergias: nos lo decís en el RSVP.",
+    "hora": "21:00 h",
+    "lugar": "Casa de Burgos",
+    "direccion": "C. Principal de Provincias, 3, Moncloa - Aravaca, 28011 Madrid",
+    "descripcion": "Cena con menú cerrado. Atención a las alergias: nos lo decís en el RSVP.",
     "imagen": "/images/placeholders/banquete-finca.jpg",
     "mapaUrl": "https://www.google.com/maps?q=Finca+La+Quinta+Illescas+Toledo&output=embed"
   },
@@ -44,88 +44,64 @@
   "notaHorarios": "Las horas son tentativas. Consulta la web para el cronograma actualizado, direcciones completas y últimos detalles.",
   "timeline": [
     {
-      "hora": "12:00",
+      "hora": "17:30",
       "titulo": "Llegada de invitados",
       "icono": "🚗",
-      "descripcion": "Nos vemos en la Ermita de la Virgen del Puerto. Aparcamiento gratuito en la zona del Campo del Moro (verificar señalización).",
-      "nota": "Recomendamos llegar 20 min antes. Habrá agua y un aperitivo de bienvenida."
+      "descripcion": "Nos vemos en la Ermita de la Virgen del Puerto.",
+      "nota": "Consejo: llegar con tiempo también cuenta como regalo de boda."
     },
     {
-      "hora": "12:30",
+      "hora": "18:00",
       "titulo": "Ceremonia",
       "icono": "💍",
-      "descripcion": "Ceremonia civil en la ermita. Dura ~45 min. Habrá pañuelos.",
-      "nota": "Al terminar, foto grupal en la escalinata."
+      "descripcion": "Ha llegado el momento: Dani y Ángel se casan.",
+      "nota": "Se permiten lágrimas. Negarlas después queda a criterio de cada uno."
     },
+    
     {
-      "hora": "13:30",
-      "titulo": "Foto familiar colectiva",
-      "icono": "📸",
-      "descripcion": "Foto de todos los invitados a la salida de la ermita.",
-      "nota": "Después caminamos ~5 min a los Jardines del Campo del Moro."
-    },
-    {
-      "hora": "14:00",
-      "titulo": "Vermú y cóctel",
+      "hora": "19:30",
+      "titulo": "El cóctel",
       "icono": "🍸",
-      "descripcion": "Vermú, jamón, tequeños, croquetas y magia en directo en los jardines.",
-      "nota": "Zona a la sombra y accesible. Después salen los autobuses hacia el banquete."
+      "descripcion": "Ya hemos dicho que sí. Ahora toca brindar, picar algo y empezar a celebrar como corresponde.",
+      "nota": "Primer brindis de muchos. Esperamos."
     },
+    
     {
-      "hora": "15:30",
-      "titulo": "Traslado en autobús",
-      "icono": "🚌",
-      "descripcion": "Autobuses gratuitos desde Campo del Moro hasta Finca La Quinta (Illescas, ~32 km).",
-      "nota": "Los buses salen puntuales a las 15:30. Si vais en coche, poned el navegador."
-    },
-    {
-      "hora": "16:00",
-      "titulo": "Banquete",
+      "hora": "21:30",
+      "titulo": "El Banquete",
       "icono": "🍽️",
-      "descripcion": "Menú a elegir (carne, pescado, vegetariano, vegano) en la finca.",
-      "nota": "Consultad vuestro nombre en el plano de mesas a la entrada."
+      "descripcion": "Tomad asiento, buscad vuestro nombre y preparaos para cenar. Nosotros nos encargamos del resto.",
+      "nota": "Dejad algo de espacio. La noche es larga."
     },
-    {
-      "hora": "19:00",
-      "titulo": "Discursos y tarta",
-      "icono": "🎂",
-      "descripcion": "Palabras de los novios, brindis y tarta.",
-      "nota": "Si vas a hablar, avisa al maestro de ceremonias antes."
-    },
+    
+/*
     {
       "hora": "20:00",
       "titulo": "Primer baile",
       "icono": "💃",
       "descripcion": "El primer baile en la pista, y después abre la barra libre.",
       "nota": "Nos movemos a la carpa exterior."
-    },
-    {
-      "hora": "22:00",
-      "titulo": "Fiesta",
-      "icono": "🎉",
-      "descripcion": "DJ, fotomatón, barra libre. Zapatos cómodos recomendados.",
-      "nota": "La carpa está climatizada; el jardín estará fresco."
-    },
+    }, */
     {
       "hora": "23:30",
+      "titulo": "Fiesta",
+      "icono": "🎉",
+      "descripcion": "Se acabaron las formalidades. Empieza la música y queda oficialmente inaugurado ese momento de la noche en el que todos creemos que sabemos bailar.",
+      "nota": "Si añadiste una canción a la playlist, ha llegado el momento de descubrir si superó el comité de selección."
+    },
+    {
+      "hora": "00:00",
       "titulo": "Hora Loca",
-      "icono": "🎭",
-      "descripcion": "Máscaras, pelucas, trompetas, música venezolana. El momento más loco.",
-      "nota": "No hay excusa para no bailar."
+      "icono": "🎉",
+      "descripcion": "Justo cuando penséis que ya habéis entendido cómo funciona esta boda… empieza la Hora Loca.",
+      "nota": "No preguntéis. Dejaos llevar."
     },
     {
       "hora": "02:00",
-      "titulo": "Resopón",
+      "titulo": "Recena",
       "icono": "🥪",
-      "descripcion": "Bocatas y algo caliente para reponer fuerzas.",
-      "nota": "Y a seguir bailando."
-    },
-    {
-      "hora": "04:00",
-      "titulo": "Bus de regreso",
-      "icono": "🚌",
-      "descripcion": "Autobuses desde la finca hasta el centro de Madrid (Plaza de España).",
-      "nota": "Última salida. Si os quedáis, hay taxi a demanda desde recepción."
+      "descripcion": "Si habéis hecho bien vuestro trabajo en la pista, a estas alturas volveréis a tener hambre. Nosotros también hemos pensado en eso.",
+      "nota": "Técnicamente es la segunda cena. Y nadie juzga."
     }
   ]
 }

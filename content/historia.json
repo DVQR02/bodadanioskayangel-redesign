@@ -1,66 +1,82 @@
 {
   "titulo": "La Gran Ilusión",
-  "subtitulo": "Cómo pasamos de 'match' a 'sí quiero'",
+  "subtitulo": "Cómo estos dos seres, uno creativo y otro analítico, pasaron a ser un 'nosotros'",
   "timeline": [
     {
-      "fecha": "Marzo 2020",
-      "titulo": "El primer truco",
-      "texto": "Nos conocimos en una sala de escape en Madrid. Fuimos los dos únicos que resolvieron el puzzle final. Spoiler: seguimos intentando resolver puzzles juntos.",
-      "icono": "🔍",
+      "fecha": "",
+      "titulo": "Todo empezó por un vaso de agua",
+      "texto": "Nos conocimos en un hospital. Dani iba a terapia y Ángel, en una misión de vital importancia, iba a buscar agua a la cafetería. Romántico, lo que se dice romántico, no parecía. Pero funcionó.",
+      "icono": "💧",
       "imagen": "/images/placeholders/escape-room.jpg"
     },
     {
-      "fecha": "Junio 2020",
-      "titulo": "La primera cita",
-      "texto": "Clase de pintura con vino. Dani destacó. Ángel intentó disimular que pintaba como un niño de 5 años. Otto, en casa, dio el visto bueno al volver.",
-      "icono": "🎨",
+      "fecha": "",
+      "titulo": "Tres días después",
+      "texto": "La cosa fue a más peligrosamente cerca del 14 de febrero. Pero no queríamos empezar nuestra relación cayendo en semejante cliché. Así que, demostrando una extraordinaria paciencia y madurez emocional, esperamos exactamente tres días. El 17 de febrero ya nos pareció suficientemente original.",
+      "icono": "❤️",
       "imagen": "/images/placeholders/pintura.jpg"
     },
     {
-      "fecha": "Septiembre 2021",
-      "titulo": "Vivimos juntos",
-      "texto": "Entre cajas de Lego a medio montar y libros de trucos de magia, encontramos nuestro hogar. Otto eligió el sofá antes que nadie.",
-      "icono": "🏠",
+      "fecha": "",
+      "titulo": "Una rosa, un libro y unas instrucciones poco claras",
+      "texto": "Nuestro primer viaje juntos nos llevó a Barcelona y a nuestro primer Sant Jordi: calles llenas de libros, rosas y una tradición preciosa. Dani recibió su rosa. Ángel necesitó hasta el segundo Sant Jordi para comprender del todo las reglas. Y aquel viaje dejó otra tradición: hicimos un escape room y decidimos, aparentemente, que viajar y simplemente visitar una ciudad no era suficiente. Desde entonces, allá donde vamos buscamos algún lugar del que nos encierren para luego pagar por intentar salir.",
+      "icono": "🌹🔐",
+      "imagen": "/images/placeholders/pintura.jpg"
+    },
+    {
+      "fecha": "",
+      "titulo": "La mudanza que nadie declaró oficialmente",
+      "texto": "La mudanza de Dani fue un proceso sutil pero extraordinariamente efectivo. Primero se quedaba a dormir alguna noche. Después apareció un cepillo de dientes. Luego alguna muda de ropa. Cada vez había más cosas suyas por casa... Hasta que un día Ángel se dio cuenta de que Dani y Otto se habían instalado definitivamente en su piso y en su corazón. Nadie recuerda exactamente cuándo ocurrió la mudanza. Pero el método funcionó.",
+      "icono": "🪥",
       "imagen": "/images/placeholders/hogar.jpg"
     },
     {
-      "fecha": "Diciembre 2024",
-      "titulo": "Un bichón, tres corazones",
-      "texto": "Llega Otto, bichón frisé, blanco como una nube y experto en robar calcetines.",
-      "icono": "🐾",
+      "fecha": "",
+      "titulo": "Café para dos",
+      "texto": "Con el tiempo fuimos creando nuestras pequeñas tradiciones. Una de ellas es sencilla: por la tarde, estemos donde estemos, tomamos café juntos. Porque a veces construir una vida juntos también consiste en reservar un ratito cada día para parar y tomar café.",
+      "icono": "☕",
       "imagen": "/images/placeholders/toto-cachorro.jpg"
     },
     {
-      "fecha": "Agosto 2026",
-      "titulo": "La pedida",
-      "texto": "Ángel preparó un show de magia 'privado'. El truco final: sacar un anillo de una chistera. Dani lloró, Otto ladró, el vecino grabó.",
-      "icono": "💍",
+      "fecha": "",
+      "titulo": "Viaja, rasca, repite",
+      "texto": "Tenemos un mapamundi y un mapa de España en los que vamos rascando cada lugar que visitamos juntos. Y nos hemos tomado la tarea bastante en serio. Todavía queda muchísimo mapa por rascar.",
+      "icono": "🗺️",
       "imagen": "/images/placeholders/pedida-magia.jpg"
     },
     {
-      "fecha": "7 de abril 2027",
-      "titulo": "El sí quiero",
-      "texto": "Y aquí estamos. Gracias por formar parte del mejor truco que hemos hecho nunca.",
-      "icono": "💜",
+      "fecha": "",
+      "titulo": "Nuestra banda sonora",
+      "texto": "También hemos ido construyendo nuestra historia a golpe de conciertos: Ed Sheeran, Carlos Vives, Rawayana, Anakena, La Oreja de Van Gogh, Shakira… Con el tiempo, algunas canciones han terminado inevitablemente asociadas a viajes, momentos y recuerdos nuestros. Y teniendo en cuenta que para Dani la música es prácticamente un idioma y Ángel empezó esta relación considerándola «eso que suena de fondo», podemos hablar de un progreso considerable.",
+      "icono": "🎶",
+      "imagen": "/images/placeholders/boda-ermita.jpg"
+    },
+    {
+      "fecha": "",
+      "titulo": "Venezuela",
+      "texto": "Y llegó un viaje que no se parecía a ninguno de los anteriores. Para Ángel era su primera vez en Venezuela: conocer el país de Dani y, por fin, a su familia allí. Para Dani significaba algo todavía más grande: volver a casa y reencontrarse con los suyos después de ocho años. Y en mitad de un viaje que ya era inolvidable por sí solo, Ángel decidió añadir una pregunta. Dani dijo que sí. Y, bueno… por eso estáis leyendo esta web.",
+      "icono": "🇻🇪💍",
       "imagen": "/images/placeholders/boda-ermita.jpg"
     }
   ],
   "funFacts": {
     "dani": [
-      { "icono": "🎨", "texto": "Pinta con acuarela desde los 9 años" },
-      { "icono": "🇻🇪", "texto": "Valenciana, criada entre mangos y arepas" },
-      { "icono": "♿", "texto": "Campeona de slalom en silla eléctrica por el salón" },
-      { "icono": "🧩", "texto": "Récord personal de escape room: 28 minutos" },
-      { "icono": "🧱", "texto": "Tiene más piezas de Lego que calcetines" },
-      { "icono": "📚", "texto": "Lee dos libros a la vez, uno por emoción" }
+      { "icono": "🇻🇪", "texto": "Venezolana de nacimiento, española por insistencia contra el destino" },
+      { "icono": "💼", "texto": "Es Project Manager de traducciones médicas. Puede coordinar cinco cosas a la vez, tener 15 pestañas abiertas, no saber de dónde viene la música y preocuparse por otras diez. Al parecer, eso se llama multitasking"
+      { "icono": "🎨", "texto": "Pinta desde niña y todavía no ha encontrado una superficie que no pueda convertirse en proyecto" },
+      { "icono": "🕯️", "texto": "Su concepto de «ambiente acogedor» requiere, como mínimo, una vela aromática encendida" },
+      { "icono": "🧀", "texto": "Para Dani una tabla de quesos no se prepara: se diseña. Y solo después se permite comerla" },
+      { "icono": "🐶", "texto": "Otto llegó a su vida antes que Ángel. Este dato deja bastante claro el orden jerárquico de la familia" },
+      { "icono": "💡", "texto": "Tiene una capacidad extraordinaria para convertir una idea sencilla en «espera, se me ha ocurrido una cosa…». Y así nació media boda" }
     ],
     "angel": [
-      { "icono": "🎩", "texto": "Sabe 47 trucos de cartas (y cuenta)" },
-      { "icono": "🇪🇸", "texto": "Madrileño de los que llegan 10 minutos tarde" },
-      { "icono": "🎲", "texto": "Pierde al Catán pero siempre quiere la revancha" },
-      { "icono": "📐", "texto": "Arquitecto de instrucciones Lego sin manual" },
-      { "icono": "🍳", "texto": "Su tortilla de patata convence a las suegras" },
-      { "icono": "🎭", "texto": "Actuó en un teatro aficionado durante 3 años" }
+      { "icono": "🇪🇸", "texto": "Cordobés de nacimiento, madrileño por circunstancias. El acento aparece y desaparece según la cantidad de familia que haya alrededor" },
+      { "icono": "☢️", "texto": "Es radiofísico hospitalario. La familia sigue sin tener del todo claro qué significa, pero suena importante" },
+      { "icono": "🎩", "texto": "Sabe hacer magia. O al menos conoce la teoría. Si lo ves actuar, ya será un milagro. Y luego toca recoger las cartas del suelo" },
+      { "icono": "🧩", "texto": "LEGO para él no tiene edad recomendada. Tiene presupuesto recomendado" },
+      { "icono": "📊", "texto": "Si algo puede compararse mediante una tabla de Excel, Ángel ya está pensando en las columnas" },
+      { "icono": "🐶", "texto": "Otto decidió que Ángel era de los suyos prácticamente desde el principio. Es probablemente su mayor logro curricular" },
+      { "icono": "🎲", "texto": "Tiene una amplia colección de juegos de mesa. A menos de la mitad les ha concedido el privilegio de salir de la estantería" }
     ]
   },
   "rpg": {
@@ -75,7 +91,7 @@
       "habilidadEspecial": "Hace desaparecer el último trozo de pizza"
     },
     "toto": {
-      "clase": "Bichon de Honor",
+      "clase": "Caniche de Honor",
       "stats": { "Ternura": 10, "Ladrido": 6, "Robo de calcetines": 10, "Obediencia": 3 },
       "habilidadEspecial": "Detecta visitas antes que el timbre"
     }

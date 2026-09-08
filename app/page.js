@@ -129,23 +129,34 @@ export default function Home() {
       </Section>
 
       {/* DRESS CODE */}
-      <Section id="dresscode" elementId="color_guide" title={dresscode.titulo}>
-        <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-8 bg-white/70 border border-lavanda-200 rounded-3xl p-6 md:p-8">
-          <img
-            loading="lazy"
-            decoding="async"
-            src={dresscode.imagen}
-            alt="Dress code"
-            className="w-44 h-44 md:w-52 md:h-52 shrink-0 rounded-2xl object-cover"
-          />
-          <div className="text-center md:text-left space-y-5">
-            <p className="text-lg text-tinta/85">{dresscode.frase}</p>
-            <div>
-              <p className="text-xs uppercase tracking-widest text-lavanda-700 mb-1">
-                Colores a evitar
-              </p>
-              <p className="text-tinta/75 italic">{dresscode.evitar}</p>
-            </div>
+      <Section id="dresscode" elementId="color_guide" title={dresscode.titulo} className="dresscode-scene">
+        <div className="dresscode-editorial">
+          <figure className="dresscode-portrait">
+            <span className="dresscode-tape" aria-hidden="true" />
+            <img loading="lazy" decoding="async" src={dresscode.imagen} alt="Otto vestido de gala con una pistola de agua" />
+            <figcaption>Seguridad del dress code</figcaption>
+          </figure>
+
+          <div className="dresscode-copy">
+            <p className="dresscode-label">Código de vestimenta</p>
+            <p className="dresscode-formal">{dresscode.codigo}</p>
+            <h3>{dresscode.lema}</h3>
+            <p className="dresscode-intro">{dresscode.introduccion}</p>
+            <p className="dresscode-principle">{dresscode.principio}</p>
+
+            <aside className="dresscode-colors">
+              <p className="dresscode-colors-title">{dresscode.colores.titulo}</p>
+              <h4>{dresscode.colores.regla}</h4>
+              <p>{dresscode.colores.detalle}</p>
+              <blockquote>{dresscode.colores.excusa}</blockquote>
+              <p className="dresscode-colors-ending">{dresscode.colores.conclusion}</p>
+            </aside>
+
+            <aside className="dresscode-warning">
+              <span aria-hidden="true">Aviso del cortejo</span>
+              <strong>{dresscode.advertencia}</strong>
+              <p>{dresscode.remate[0]}<br />{dresscode.remate[1]}</p>
+            </aside>
           </div>
         </div>
       </Section>

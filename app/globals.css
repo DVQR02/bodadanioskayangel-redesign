@@ -144,6 +144,40 @@ body {
 .trait-icon { display: block; width: 100%; height: 100%; object-fit: contain; }
 .character-traits p { font-family: 'Arapey',Georgia,serif; font-size: .96rem; line-height: 1.42; color: rgba(41,37,35,.74); }
 
+/* Dress code — editorial invitation with Otto as guardian */
+.dresscode-scene { overflow: hidden; background: radial-gradient(circle at 8% 20%,rgba(175,202,219,.18),transparent 24rem),radial-gradient(circle at 94% 78%,rgba(233,185,189,.18),transparent 26rem),var(--paper); }
+.dresscode-editorial { display: grid; grid-template-columns: minmax(17rem,.82fr) minmax(0,1.18fr); align-items: center; gap: clamp(2.5rem,6vw,6rem); max-width: 65rem; margin: 0 auto; }
+.dresscode-portrait { position: relative; padding: .75rem .75rem 2.5rem; background: #fffdf8; box-shadow: 0 30px 70px -38px rgba(56,41,66,.55); transform: rotate(-1.5deg); }
+.dresscode-portrait::before { content: ""; position: absolute; z-index: -1; inset: -1.1rem; border: 1px solid rgba(114,83,154,.14); transform: rotate(2.8deg); }
+.dresscode-portrait img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.dresscode-portrait figcaption { margin-top: 1rem; text-align: center; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(41,37,35,.48); }
+.dresscode-tape { position: absolute; z-index: 2; top: -1rem; left: 50%; width: 7rem; height: 1.7rem; background: rgba(175,202,219,.42); box-shadow: inset 0 0 10px rgba(255,255,255,.58); transform: translateX(-50%) rotate(2deg); }
+.dresscode-copy { min-width: 0; }
+.dresscode-label { font-size: .62rem; letter-spacing: .28em; text-transform: uppercase; color: var(--ivy); }
+.dresscode-formal { margin-top: .45rem; font-family: 'Cormorant Garamond',Georgia,serif; font-size: clamp(2.9rem,6vw,4.8rem); font-weight: 500; line-height: .9; letter-spacing: .09em; text-transform: uppercase; color: var(--ink); }
+.dresscode-copy > h3 { max-width: 36rem; margin-top: 1.6rem; font-family: 'Cormorant Garamond',Georgia,serif; font-size: clamp(1.7rem,3vw,2.35rem); font-weight: 500; line-height: 1.08; color: var(--lavender-deep); text-wrap: balance; }
+.dresscode-intro { max-width: 37rem; margin-top: 1.25rem; font-size: 1.05rem; line-height: 1.68; color: rgba(41,37,35,.74); }
+.dresscode-principle { margin-top: 1.1rem; font-family: 'Cormorant Garamond',Georgia,serif; font-size: 1.35rem; font-style: italic; color: var(--ink); }
+.dresscode-colors { position: relative; margin-top: 2.2rem; padding: 1.65rem clamp(1.3rem,3vw,2rem); border: 1px solid rgba(233,185,189,.48); border-radius: 1.5rem; background: rgba(255,250,247,.78); box-shadow: 0 20px 50px -42px rgba(80,50,65,.5); }
+.dresscode-colors-title { font-size: .62rem; letter-spacing: .25em; text-transform: uppercase; color: #9f5f69; }
+.dresscode-colors h4 { margin-top: .55rem; font-family: 'Cormorant Garamond',Georgia,serif; font-size: 1.65rem; font-weight: 600; line-height: 1.15; color: var(--ink); }
+.dresscode-colors > p:not(.dresscode-colors-title) { margin-top: .85rem; line-height: 1.55; color: rgba(41,37,35,.7); }
+.dresscode-colors blockquote { margin: 1rem 0; padding: .35rem 0 .35rem 1.1rem; border-left: 2px solid var(--petal); font-family: 'Cormorant Garamond',Georgia,serif; font-size: 1.28rem; font-style: italic; color: #764d58; }
+.dresscode-colors .dresscode-colors-ending { font-weight: 600; color: var(--ink); }
+.dresscode-warning { position: relative; margin-top: 1.5rem; padding: 1.5rem 1.6rem 1.45rem; border-left: 3px solid var(--lavender-deep); background: linear-gradient(105deg,rgba(185,161,206,.17),rgba(175,202,219,.09)); }
+.dresscode-warning span { display: block; font-size: .58rem; letter-spacing: .24em; text-transform: uppercase; color: var(--lavender-deep); }
+.dresscode-warning strong { display: block; margin-top: .6rem; font-family: 'Cormorant Garamond',Georgia,serif; font-size: 1.2rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
+.dresscode-warning p { margin-top: .8rem; font-style: italic; line-height: 1.5; color: rgba(41,37,35,.67); }
+
+@media (max-width: 767px) {
+  .dresscode-editorial { grid-template-columns: 1fr; gap: 3.5rem; }
+  .dresscode-portrait { width: min(87%,24rem); margin: 0 auto; }
+  .dresscode-copy { text-align: center; }
+  .dresscode-copy > h3,.dresscode-intro { margin-right: auto; margin-left: auto; }
+  .dresscode-colors,.dresscode-warning { text-align: left; }
+  .dresscode-formal { font-size: clamp(3rem,17vw,4.4rem); }
+}
+
 @media (max-width: 480px) {
   .countdown-grid { gap: 0; }
   .countdown-part { padding: 0 .35rem; }

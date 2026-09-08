@@ -2,13 +2,13 @@ import Reveal from "./Reveal";
 
 const iconPaths = {
   dani: ["home", "gear", "brush", "candle", "cheese", "paw", "spark"],
-  angel: ["home", "radiation", "wand", "brick", "chart", "dice", "paw"],
+  angel: ["home", "radiation", "wand", "brick", "chart", "paw", "dice"],
 };
 
 // Cuando tengáis las fotos, solo hay que escribir aquí sus rutas dentro de /public.
 const characterPhotos = {
   dani: "/images/personajes/danioska-profile.jpg",
-  angel: "/images/personajes/angel-profile-close-2.jpg",
+  angel: "images/personajes/Angel-closeup.jpg",
 };
 
 const characterProfiles = {

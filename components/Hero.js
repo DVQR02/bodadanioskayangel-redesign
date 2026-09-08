@@ -51,7 +51,7 @@ export default function Hero() {
         <div className="hero-bottom-glow" aria-hidden="true" />
 
         <div className="hero-content">
-          <p className="hero-kicker">Para celebrar la boda de</p>
+          <p className="hero-kicker">Celebremos juntos la boda de</p>
           <h1 className="hero-names">
             <span>Danioska</span>
             <span className="hero-ampersand">&amp;</span>

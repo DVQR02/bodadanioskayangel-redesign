@@ -3,27 +3,27 @@
 import { useEffect, useRef } from "react";
 import Reveal from "./Reveal";
 
+const storyIcons = {
+  water: "agua.png",
+  heart: "corazon.png",
+  rose: "rosa.png",
+  toothbrush: "mudanza.png",
+  coffee: "cafe.png",
+  map: "mapa.png",
+  music: "bandasonora.png",
+  ring: "pedida.png",
+};
+
 function StoryIcon({ type }) {
-  const common = {
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.55,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-  };
-
-  const icons = {
-    water: <><path d="M9 5.5h6l-.8 13h-4.4L9 5.5Z"/><path d="M9.3 9.2c1.9-.8 3.8.8 5.4 0"/><path d="M11 3.2h2"/></>,
-    heart: <path d="M12 19.2S4.8 15 4.8 9.5A3.7 3.7 0 0 1 12 8.2a3.7 3.7 0 0 1 7.2 1.3C19.2 15 12 19.2 12 19.2Z"/>,
-    rose: <><path d="M8 18.8h9M9.5 17V9.7h6V17M10.5 8.2c-1.8-1.9-.1-4.5 2.1-2.7.8-2.8 4.3-1.8 3.5.8 2.7.3 2.2 3.5-.1 3.4"/><path d="M12.4 10.2c.2-2.2 1.3-3.7 3.2-4.2"/></>,
-    toothbrush: <><path d="M6 17 16.8 6.2M14.9 4.3l4.8 4.8M16.2 5.6l1.7-1.7M17.7 7.1l1.7-1.7M5.8 17.2 4.4 19.6l2.4-1.4"/></>,
-    coffee: <><path d="M4.5 9h6.8v6.4a3 3 0 0 1-3 3h-.8a3 3 0 0 1-3-3V9ZM11.3 10.4h1a2 2 0 0 1 0 4h-1M13.8 9h5.7v5.5a2.6 2.6 0 0 1-2.6 2.6h-.5a2.6 2.6 0 0 1-2.6-2.6V9ZM19.5 10.3h.7a1.7 1.7 0 0 1 0 3.4h-.7M7 6.8c-1.2-1.2.9-1.7 0-3M16 6.8c-1.2-1.2.9-1.7 0-3"/></>,
-    map: <><circle cx="12" cy="12" r="8.2"/><path d="M4 12h16M12 3.8c2.6 2.5 3.4 5.2 3.4 8.2s-.8 5.7-3.4 8.2M12 3.8C9.4 6.3 8.6 9 8.6 12s.8 5.7 3.4 8.2"/><path d="m16.7 16.8 2.6 2.6"/></>,
-    music: <><path d="M9.5 17.2V7l8-1.8v10.1"/><ellipse cx="7.3" cy="17.5" rx="2.2" ry="1.5"/><ellipse cx="15.3" cy="15.6" rx="2.2" ry="1.5"/><path d="M9.5 10.2l8-1.8"/></>,
-    ring: <><circle cx="12" cy="14.2" r="5.4"/><path d="m9.1 8.9 2.9-4.3 2.9 4.3M10.2 5h3.6M18.3 4.5v2.2M17.2 5.6h2.2"/></>,
-  };
-
-  return <svg viewBox="0 0 24 24" aria-hidden="true" {...common}>{icons[type]}</svg>;
+  return (
+    <img
+      src={`/images/icons/story/${storyIcons[type]}`}
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+      decoding="async"
+    />
+  );
 }
 
 function StoryPhoto({ chapter, index }) {

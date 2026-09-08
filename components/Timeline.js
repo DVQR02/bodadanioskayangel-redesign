@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Reveal from "./Reveal";
 
 const timelineIcons = [
-  "llegada.png",
+  "ermita.png",
   "ceremonia.png",
   "coctel.png",
   "banquete.png",

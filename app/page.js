@@ -10,6 +10,7 @@ import Playlist from "@/components/Playlist";
 import CouplePortrait from "@/components/CouplePortrait";
 import OurStory from "@/components/OurStory";
 import SceneTransition from "@/components/SceneTransition";
+import WeddingPartyCarousel from "@/components/WeddingPartyCarousel";
 import site from "@/content/site.json";
 import historia from "@/content/historia.json";
 import evento from "@/content/evento.json";
@@ -152,49 +153,7 @@ export default function Home() {
 
       {/* CORTEJO */}
       <Section id="cortejo" elementId="wedding_party" title={cortejo.titulo} subtitle={cortejo.subtitulo}>
-        {cortejo.padres && (
-          <div className="mb-12">
-            <h3 className="font-serif text-2xl text-center text-lavanda-700 mb-6">Nuestros padres</h3>
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-              {cortejo.padres.map((p) => (
-                <div key={p.nombre} className="bg-white/70 border border-lavanda-200 rounded-3xl p-5 flex flex-col sm:flex-row gap-4 items-center sm:items-start text-center sm:text-left">
-                  <img
-                    loading="lazy"
-                    decoding="async"
-                    src={p.imagen}
-                    alt={p.nombre}
-                    className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full object-cover border-2 border-lavanda-200 shrink-0"
-                  />
-                  <div>
-                    <p className="font-serif text-xl text-tinta">{p.nombre}</p>
-                    <p className="text-xs uppercase tracking-widest text-lavanda-700 mt-1">{p.rol}</p>
-                    <p className="text-sm text-tinta/75 mt-2">{p.bio}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        <h3 className="font-serif text-2xl text-center text-lavanda-700 mb-6">
-          Padrinos, damas, caballeros y el bichón
-        </h3>
-        <div className="grid md:grid-cols-3 lg:grid-cols-3 gap-8">
-          {cortejo.personas.map((p) => (
-            <div key={p.nombre} className="text-center">
-              <img
-                loading="lazy"
-                decoding="async"
-                src={p.imagen}
-                alt={p.nombre}
-                className="w-40 h-40 mx-auto rounded-full object-cover border-4 border-lavanda-200 shadow-soft"
-              />
-              <p className="font-serif text-xl mt-3 text-tinta">{p.nombre}</p>
-              <p className="text-xs uppercase tracking-widest text-lavanda-700 mt-1">{p.rol}</p>
-              <p className="text-sm text-tinta/75 mt-2">{p.bio}</p>
-            </div>
-          ))}
-        </div>
+        <WeddingPartyCarousel padres={cortejo.padres} personas={cortejo.personas} />
       </Section>
 
       {/* GALERÍA */}

@@ -61,22 +61,22 @@
   ],
   "funFacts": {
     "dani": [
-      { "icono": "🇻🇪", "texto": "Venezolana de nacimiento, española por insistencia contra el destino" },
-      { "icono": "💼", "texto": "Es Project Manager de traducciones médicas. Puede coordinar cinco cosas a la vez, tener 15 pestañas abiertas, no saber de dónde viene la música y preocuparse por otras diez. Al parecer, eso se llama multitasking" },
-      { "icono": "🎨", "texto": "Pinta desde niña y todavía no ha encontrado una superficie que no pueda convertirse en proyecto" },
-      { "icono": "🕯️", "texto": "Su concepto de «ambiente acogedor» requiere, como mínimo, una vela aromática encendida" },
-      { "icono": "🧀", "texto": "Para Dani una tabla de quesos no se prepara: se diseña. Y solo después se permite comerla" },
-      { "icono": "🐶", "texto": "Otto llegó a su vida antes que Ángel. Este dato deja bastante claro el orden jerárquico de la familia" },
-      { "icono": "💡", "texto": "Tiene una capacidad extraordinaria para convertir una idea sencilla en «espera, se me ha ocurrido una cosa…». Y así nació media boda" }
+      { "icono": "🇻🇪", "texto": "Venezolana de nacimiento, española por insistencia contra el destino." },
+      { "icono": "💼", "texto": "Project Manager: 15 pestañas abiertas y preocupándose por otras diez. Lo llaman multitasking." },
+      { "icono": "🎨", "texto": "Pinta desde niña y aún no ha encontrado una superficie que no pueda convertirse en proyecto." },
+      { "icono": "🕯️", "texto": "Un lugar no es acogedor hasta que Dani enciende una vela aromática." },
+      { "icono": "🧀", "texto": "Una tabla de quesos no se prepara: se diseña. Luego, si eso, se come." },
+      { "icono": "🐶", "texto": "Otto llegó antes que Ángel. El orden jerárquico de la familia está claro." },
+      { "icono": "💡", "texto": "Puede tardar tres días en empezar algo y luego decidir que dormir es negociable." }
     ],
     "angel": [
-      { "icono": "🇪🇸", "texto": "Cordobés de nacimiento, madrileño por circunstancias. El acento aparece y desaparece según la cantidad de familia que haya alrededor" },
-      { "icono": "☢️", "texto": "Es radiofísico hospitalario. La familia sigue sin tener del todo claro qué significa, pero suena importante" },
-      { "icono": "🎩", "texto": "Sabe hacer magia. O al menos conoce la teoría. Si lo ves actuar, ya será un milagro. Y luego toca recoger las cartas del suelo" },
-      { "icono": "🧩", "texto": "LEGO para él no tiene edad recomendada. Tiene presupuesto recomendado" },
-      { "icono": "📊", "texto": "Si algo puede compararse mediante una tabla de Excel, Ángel ya está pensando en las columnas" },
-      { "icono": "🐶", "texto": "Otto decidió que Ángel era de los suyos prácticamente desde el principio. Es probablemente su mayor logro curricular" },
-      { "icono": "🎲", "texto": "Tiene una amplia colección de juegos de mesa. A menos de la mitad les ha concedido el privilegio de salir de la estantería" }
+      { "icono": "🇪🇸", "texto": "Cordobés de nacimiento, madrileño por circunstancias; el acento depende de quién haya alrededor." },
+      { "icono": "☢️", "texto": "Radiofísico hospitalario. La familia no sabe muy bien qué significa, pero suena importante." },
+      { "icono": "🎩", "texto": "Mago de formación. De ejecución ya hablamos otro día." },
+      { "icono": "🧩", "texto": "LEGO no tiene edad recomendada. Tiene presupuesto recomendado." },
+      { "icono": "📊", "texto": "Le encanta improvisar. Solo necesita saber dónde, cuándo, cuánto dura y tenerlo apuntado en el Excel." },
+      { "icono": "🎲", "texto": "Colecciona juegos de mesa. Incluso ha jugado a algunos." },
+      { "icono": "🐶", "texto": "Que Otto lo aceptara como uno de los suyos sigue siendo su mayor logro curricular." }
     ]
   },
   "rpg": {

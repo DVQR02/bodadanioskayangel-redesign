@@ -51,7 +51,6 @@ export default function Hero() {
         <div className="hero-bottom-glow" aria-hidden="true" />
 
         <div className="hero-content">
-          <span className="hero-monogram" role="img" aria-label="Monograma de Danioska y Ángel" />
           <p className="hero-kicker">Para celebrar la boda de</p>
           <h1 className="hero-names">
             <span>Danioska</span>

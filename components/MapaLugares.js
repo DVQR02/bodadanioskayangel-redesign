@@ -40,7 +40,9 @@ export default function MapaLugares({ puntos }) {
           {visibles.map((punto) => (
             <li key={punto.id} className={punto.id === seleccionado?.id ? "is-active" : ""}>
               <div className="places-card-inner">
-                <span className="places-card-icon" style={{ background: punto.color || "#e5d8ff" }}>{punto.icono}</span>
+                <span className="places-card-icon" style={{ background: punto.color || "#e5d8ff" }}>
+                  {punto.icono?.startsWith("/") ? <img src={punto.icono} alt="" aria-hidden="true" /> : punto.icono}
+                </span>
                 <div className="places-card-copy">
                   <p className="places-card-category">{punto.categoria}</p>
                   <p className="places-card-name">{punto.nombre}</p>

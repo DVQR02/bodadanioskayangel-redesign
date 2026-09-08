@@ -5,11 +5,9 @@ import site from "@/content/site.json";
 
 const links = [
   { href: "/#historia", label: "Nosotros" },
-  { href: "/#evento", label: "El día" },
+  { href: "/#evento", label: "El Gran Día" },
   { href: "/#viaje", label: "Cómo llegar" },
-  { href: "/#galeria", label: "Galería" },
-  { href: "/#otto", label: "Otto 🐾" },
-  { href: "/#playlist", label: "Playlist" },
+  { href: "/#cortejo", label: "El Cortejo" },
   { href: "/#faq", label: "FAQ" },
 ];
 
@@ -70,7 +68,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener"
               title="Abrir la playlist en Spotify"
-              className="px-3 py-2 rounded-full border border-lavanda-300 text-lavanda-700 hover:bg-lavanda-50 transition text-sm"
+              className="navbar-spotify px-3 py-2 rounded-full border border-lavanda-300 text-lavanda-900 hover:bg-lavanda-50 transition text-sm"
             >
               🎵 Spotify
             </a>
@@ -80,7 +78,7 @@ export default function Navbar() {
               href="/#rsvp"
               className="px-4 py-2 rounded-full bg-lavanda-600 text-white text-sm hover:bg-lavanda-700 transition"
             >
-              Confirmar
+              Confirmar asistencia
             </Link>
           </li>
         </ul>
@@ -105,7 +103,7 @@ export default function Navbar() {
               target="_blank"
               rel="noopener"
               onClick={() => setOpen(false)}
-              className="block py-1.5 text-lavanda-700"
+              className="navbar-spotify block py-1.5 text-lavanda-900"
             >
               🎵 Abrir en Spotify
             </a>

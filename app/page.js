@@ -9,6 +9,7 @@ import FlagIcon from "@/components/FlagIcon";
 import Playlist from "@/components/Playlist";
 import CouplePortrait from "@/components/CouplePortrait";
 import OurStory from "@/components/OurStory";
+import SceneTransition from "@/components/SceneTransition";
 import site from "@/content/site.json";
 import historia from "@/content/historia.json";
 import evento from "@/content/evento.json";
@@ -49,6 +50,8 @@ export default function Home() {
         <OurStory items={historia.timeline} />
       </Section>
 
+      <SceneTransition variant="story-day" />
+
       {/* EVENTO — solo cronograma */}
       <Section id="evento" elementId="ceremony" title={evento.titulo} subtitle={evento.subtitulo}>
         {evento.notaHorarios && (
@@ -61,6 +64,8 @@ export default function Home() {
         </div>
       </Section>
 
+      <SceneTransition variant="day-places" />
+
       {/* VIAJE — mapa con puntos de interés + hoteles */}
       <Section id="viaje" elementId="venue_map" title={viaje.titulo} subtitle={viaje.subtitulo}>
         <MapaLugares puntos={viaje.puntosInteres} />
@@ -72,7 +77,9 @@ export default function Home() {
           <div className="hotel-guide-grid">
             {viaje.hoteles.map((h) => (
               <article key={h.nombre} className="hotel-guide-card magic-card">
-                <span className="hotel-guide-number">{String(viaje.hoteles.indexOf(h) + 1).padStart(2, "0")}</span>
+                <span className="hotel-guide-number">
+                  <img src={h.icono} alt="" aria-hidden="true" loading="lazy" decoding="async" />
+                </span>
                 <div>
                   <h4>{h.nombre}</h4>
                   <p className="hotel-guide-address">{h.direccion}</p>

@@ -1,23 +1,37 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Reveal from "@/components/Reveal";
 
 export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
   const [active, setActive] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
   const touchStart = useRef(null);
 
-  const move = (direction) => setActive((current) => (current + direction + personas.length) % personas.length);
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 768px)");
+    const update = () => setIsDesktop(media.matches);
+    update();
+    media.addEventListener?.("change", update);
+    return () => media.removeEventListener?.("change", update);
+  }, []);
+
+  const move = (direction) => {
+    const distance = isDesktop ? 2 : 1;
+    setActive((current) => (current + direction * distance + personas.length) % personas.length);
+  };
   const finishSwipe = (clientX) => {
     if (touchStart.current === null) return;
     const distance = clientX - touchStart.current;
     touchStart.current = null;
     if (Math.abs(distance) > 45) move(distance < 0 ? 1 : -1);
   };
-  const visiblePeople = Array.from(
-    { length: Math.min(3, personas.length) },
-    (_, offset) => personas[(active + offset) % personas.length]
-  );
+  const visiblePeople = [
+    { person: personas[(active - 1 + personas.length) % personas.length], position: "before" },
+    { person: personas[active], position: "first" },
+    { person: personas[(active + 1) % personas.length], position: "second" },
+    { person: personas[(active + 2) % personas.length], position: "after" },
+  ];
 
   return (
     <div className="wedding-party">
@@ -63,9 +77,13 @@ export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
             onTouchStart={(event) => { touchStart.current = event.touches[0].clientX; }}
             onTouchEnd={(event) => finishSwipe(event.changedTouches[0].clientX)}
           >
-            <div key={active} className="party-person-grid" aria-live="polite">
-              {visiblePeople.map((person, index) => (
-                <article key={person.nombre} className={`party-person-card party-tone-${(active + index) % 3}`}>
+            <div key={active} className="party-person-stage" aria-live="polite">
+              {visiblePeople.map(({ person, position }, index) => (
+                <article
+                  key={`${position}-${person.nombre}`}
+                  className={`party-person-card party-position-${position} party-tone-${(active + index) % 3}`}
+                  aria-hidden={position === "before" || position === "after" || (!isDesktop && position === "second")}
+                >
                   <div className="party-person-photo">
                     <img loading={index === 0 ? "eager" : "lazy"} decoding="async" src={person.imagen} alt={person.nombre} />
                   </div>

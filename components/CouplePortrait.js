@@ -7,7 +7,7 @@ const iconPaths = {
 
 // Cuando tengáis las fotos, solo hay que escribir aquí sus rutas dentro de /public.
 const characterPhotos = {
-  dani: "",
+  dani: "/images/personajes/danioska.jpg",
   angel: "",
 };
 

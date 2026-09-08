@@ -52,7 +52,7 @@ export default function Home() {
       {/* EVENTO — solo cronograma */}
       <Section id="evento" elementId="ceremony" title={evento.titulo} subtitle={evento.subtitulo}>
         {evento.notaHorarios && (
-          <p className="text-center max-w-2xl mx-auto -mt-4 mb-10 text-sm italic text-tinta/70 bg-white/60 border border-lavanda-200 rounded-2xl px-4 py-2">
+          <p className="day-schedule-note">
             {evento.notaHorarios}
           </p>
         )}

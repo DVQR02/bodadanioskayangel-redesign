@@ -5,7 +5,7 @@
     {
       "titulo": "Todo empezó por una botella de agua",
       "icono": "water",
-      "imagen": "public/images/NUESTRA_HISTORIA/01_atardecer_invierno.jpg",
+      "imagen": "/images/NUESTRA_HISTORIA/01_atardecer_invierno.jpg",
       "alt": "Una de las primeras fotografías de Dani y Ángel juntos",
       "fotoIdeal": "Una de nuestras primeras fotos juntos",
       "parrafos": [
@@ -16,7 +16,7 @@
     {
       "titulo": "Tres días después de San Valentín",
       "icono": "heart",
-      "imagen": "public/images/NUESTRA_HISTORIA/02_cuenca.jpg",
+      "imagen": "/images/NUESTRA_HISTORIA/02_cuenca.jpg",
       "alt": "Dani y Ángel durante sus primeros meses juntos",
       "fotoIdeal": "Una foto de nuestros primeros meses",
       "parrafos": [
@@ -28,7 +28,7 @@
     {
       "titulo": "Una rosa, un libro y unas instrucciones poco claras",
       "icono": "rose",
-      "imagen": "public/images/NUESTRA_HISTORIA/03_escape_room_sant_jordi.jpg",
+      "imagen": "/images/NUESTRA_HISTORIA/03_escape_room_sant_jordi.jpg",
       "alt": "Primer viaje de Dani y Ángel a Barcelona durante Sant Jordi",
       "fotoIdeal": "Nuestro primer viaje a Barcelona · Sant Jordi",
       "parrafos": [
@@ -41,7 +41,7 @@
     {
       "titulo": "La mudanza que nadie declaró oficialmente",
       "icono": "toothbrush",
-      "imagen": "public/images/NUESTRA_HISTORIA/04_manos_y_patita_otto.jpg",
+      "imagen": "/images/NUESTRA_HISTORIA/04_manos_y_patita_otto.jpg",
       "alt": "Dani, Ángel y Otto juntos en casa",
       "fotoIdeal": "Una foto casera de Dani, Ángel y Otto",
       "parrafos": [
@@ -54,7 +54,7 @@
     {
       "titulo": "Café para dos",
       "icono": "coffee",
-      "imagen": "public/images/NUESTRA_HISTORIA/05_taza_gigante_cafe.jpg",
+      "imagen": "/images/NUESTRA_HISTORIA/05_taza_gigante_cafe.jpg",
       "alt": "Dani y Ángel compartiendo un café",
       "fotoIdeal": "Una foto tomando café juntos",
       "parrafos": [
@@ -65,7 +65,7 @@
     {
       "titulo": "Viaja, rasca, repite",
       "icono": "map",
-      "imagen": "public/images/NUESTRA_HISTORIA/06_disney.jpg",
+      "imagen": "/images/NUESTRA_HISTORIA/06_disney.jpg",
       "alt": "Dani y Ángel durante uno de sus viajes",
       "fotoIdeal": "Una fotografía viajando juntos",
       "parrafos": [
@@ -89,7 +89,7 @@
     {
       "titulo": "Venezuela",
       "icono": "ring",
-      "imagen": "public/images/NUESTRA_HISTORIA/08_propuesta_playa.jpg",
+      "imagen": "/images/NUESTRA_HISTORIA/08_propuesta_playa.jpg",
       "alt": "El compromiso de Dani y Ángel en Venezuela",
       "fotoIdeal": "La fotografía de nuestro compromiso en Venezuela",
       "parrafos": [

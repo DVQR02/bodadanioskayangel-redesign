@@ -76,7 +76,7 @@ export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
         <div className="party-carousel-wrap">
           <Reveal className="party-subheading party-carousel-heading">
             <p>El equipo que completa la aventura</p>
-            <h3>Padrinos, damas y caballeros</h3>
+            <h3>Padrinos, damas, caballeros y el Caniche</h3>
           </Reveal>
           <div
             className={`party-carousel ${motion ? `is-moving-${motion}` : ""} ${settling ? `is-settling-${settling}` : ""}`}

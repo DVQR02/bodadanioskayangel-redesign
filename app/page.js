@@ -20,7 +20,6 @@ import cortejo from "@/content/cortejo.json";
 import cultural from "@/content/cultural.json";
 import dresscode from "@/content/dresscode.json";
 import galeria from "@/content/galeria.json";
-import otto from "@/content/otto.json";
 
 export default function Home() {
   return (
@@ -180,44 +179,6 @@ export default function Home() {
           >
             Abrir álbum compartido
           </a>
-        </div>
-      </Section>
-
-      {/* OTTO */}
-      <Section id="otto" elementId="otto" title={otto.titulo} subtitle={otto.subtitulo}>
-        <div className="grid md:grid-cols-2 gap-10 items-center mb-16">
-          <img
-            loading="lazy"
-            decoding="async"
-            src={otto.imagenPrincipal}
-            alt="Otto"
-            className="rounded-3xl shadow-soft w-full aspect-square object-cover"
-          />
-          <div>
-            <h3 className="font-serif text-3xl text-tinta mb-2">Ficha de personaje</h3>
-            <p className="text-lavanda-700 font-medium mb-4">{otto.cargo}</p>
-            <dl className="space-y-2 text-sm">
-              {Object.entries(otto.bio).map(([k, v]) => (
-                <div key={k} className="flex gap-3 border-b border-lavanda-100 pb-1">
-                  <dt className="capitalize font-medium text-tinta w-40">{k.replace(/([A-Z])/g, " $1")}</dt>
-                  <dd className="text-tinta/75">{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-
-        <div>
-          <h3 className="font-serif text-3xl text-lavanda-700 text-center mb-6">Reseñas de Otto</h3>
-          <div className="grid md:grid-cols-2 gap-4">
-            {otto.resenas.map((r, i) => (
-              <div key={i} className="bg-white/70 border border-lavanda-200 rounded-2xl p-5">
-                <p className="font-serif text-xl text-tinta">{r.lugar}</p>
-                <p className="text-amber-500">{"🐾".repeat(r.estrellas)}</p>
-                <p className="text-sm text-tinta/75 mt-2 italic">"{r.comentario}"</p>
-              </div>
-            ))}
-          </div>
         </div>
       </Section>
 

@@ -8,6 +8,7 @@ import MapaLugares from "@/components/MapaLugares";
 import FlagIcon from "@/components/FlagIcon";
 import Playlist from "@/components/Playlist";
 import CouplePortrait from "@/components/CouplePortrait";
+import OurStory from "@/components/OurStory";
 import site from "@/content/site.json";
 import historia from "@/content/historia.json";
 import evento from "@/content/evento.json";
@@ -45,6 +46,7 @@ export default function Home() {
       {/* SOBRE NOSOTROS */}
       <Section id="historia" className="about-scene">
         <CouplePortrait historia={historia} />
+        <OurStory items={historia.timeline} />
       </Section>
 
       {/* EVENTO — solo cronograma */}

@@ -65,35 +65,29 @@ export default function Home() {
       <Section id="viaje" elementId="venue_map" title={viaje.titulo} subtitle={viaje.subtitulo}>
         <MapaLugares puntos={viaje.puntosInteres} />
 
-        <div id="hoteles" data-element-id="hotels" className="mt-12">
-          <h3 className="font-serif text-3xl text-center text-lavanda-700 mb-6">
-            Hoteles
-          </h3>
-          <div className="grid md:grid-cols-3 gap-4">
+        <div id="hoteles" data-element-id="hotels" className="hotel-guide">
+          <p className="hotel-guide-overline">Dónde quedarse</p>
+          <h3>Hoteles</h3>
+          <p className="hotel-guide-intro">Cuatro opciones cerca de los lugares principales de la boda.</p>
+          <div className="hotel-guide-grid">
             {viaje.hoteles.map((h) => (
-              <a
-                key={h.nombre}
-                href={h.url}
-                target="_blank"
-                rel="noopener"
-                className="magic-card block bg-white/70 rounded-2xl overflow-hidden border border-lavanda-200"
-              >
-                <img loading="lazy" decoding="async" src={h.imagen} alt={h.nombre} className="w-full h-36 object-cover" />
-                <div className="p-4">
-                  <h4 className="font-serif text-lg text-tinta">{h.nombre}</h4>
-                  <p className="text-sm text-lavanda-700 font-medium">{h.precio}</p>
-                  <p className="text-xs text-tinta/60 mt-1">{h.distancia}</p>
-                  <p className="text-xs text-tinta/70 mt-2">{h.nota}</p>
+              <article key={h.nombre} className="hotel-guide-card magic-card">
+                <span className="hotel-guide-number">{String(viaje.hoteles.indexOf(h) + 1).padStart(2, "0")}</span>
+                <div>
+                  <h4>{h.nombre}</h4>
+                  <p className="hotel-guide-address">{h.direccion}</p>
+                  <p className="hotel-guide-note">{h.nota}</p>
                   {h.descuento && (
-                    <p className="mt-3 text-xs font-medium text-lavanda-700 bg-lavanda-50 rounded-full px-3 py-1 inline-block">
-                      🎟️ {h.descuento}
+                    <p className="hotel-guide-discount">
+                      <span>Ventaja para invitados</span>{h.descuento}
                     </p>
                   )}
-                  <p className="text-xs text-lavanda-700 underline decoration-dotted mt-3">
-                    Reservar →
-                  </p>
+                  <div className="hotel-guide-actions">
+                    <a href={h.url} target="_blank" rel="noopener noreferrer">Reservar →</a>
+                    <a href={h.direccionesUrl} target="_blank" rel="noopener noreferrer">Ver mapa</a>
+                  </div>
                 </div>
-              </a>
+              </article>
             ))}
           </div>
         </div>

@@ -27,8 +27,16 @@ function StoryIcon({ type }) {
 }
 
 function StoryPhoto({ chapter, index }) {
+  const chapterClass = index === 1
+    ? "story-photo-cuenca"
+    : index === 3
+      ? "story-photo-otto"
+      : index === 7
+        ? "story-photo-proposal"
+        : "";
+
   return (
-    <figure className={`story-photo story-photo-${(index % 4) + 1}`}>
+    <figure className={`story-photo story-photo-${(index % 4) + 1} ${chapterClass}`}>
       <span className="story-tape" aria-hidden="true" />
       {chapter.imagen ? (
         <img src={chapter.imagen} alt={chapter.alt || chapter.titulo} loading="lazy" decoding="async" />
@@ -37,6 +45,11 @@ function StoryPhoto({ chapter, index }) {
           <span>Fotografía pendiente</span>
           <small>{chapter.fotoIdeal}</small>
         </div>
+      )}
+      {chapter.imagenSecundaria && (
+        <span className="story-proposal-polaroid">
+          <img src={chapter.imagenSecundaria} alt={chapter.altSecundaria || ""} loading="lazy" decoding="async" />
+        </span>
       )}
     </figure>
   );

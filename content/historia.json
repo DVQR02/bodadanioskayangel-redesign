@@ -90,7 +90,9 @@
       "titulo": "Venezuela",
       "icono": "ring",
       "imagen": "/images/NUESTRA_HISTORIA/08_propuesta_playa.jpg",
+      "imagenSecundaria": "/images/NUESTRA_HISTORIA/09_anillo_concha_POLAROID.jpg",
       "alt": "El compromiso de Dani y Ángel en Venezuela",
+      "altSecundaria": "El anillo de compromiso sobre una concha y una caracola",
       "fotoIdeal": "La fotografía de nuestro compromiso en Venezuela",
       "parrafos": [
         "Y llegó un viaje que no se parecía a ninguno de los anteriores.",

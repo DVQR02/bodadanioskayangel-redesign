@@ -157,9 +157,9 @@ body {
 .character-photo span { font-size: .56rem; letter-spacing: .2em; text-transform: uppercase; transform: rotate(3deg); }
 .character-sheet-angel .character-photo { border-color: rgba(102,118,83,.35); background: radial-gradient(circle at 35% 30%,#fff,rgba(155,170,131,.2)); color: rgba(102,118,83,.68); transform: rotate(3deg); }
 .character-sheet-angel .character-photo span { transform: rotate(-3deg); }
-.character-identity { min-width: 0; padding: .45rem 0 .55rem; }
+.character-identity { min-width: 0; padding: .65rem 0 .8rem; }
 .character-origin { font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(41,37,35,.5); }
-.character-header h3 { margin: .35rem 0 .65rem; font-family: 'Mea Culpa','Great Vibes',cursive; font-size: clamp(3rem,5vw,4.5rem); font-weight: 400; line-height: 1.12; color: var(--ink); }
+.character-header h3 { margin: .7rem 0 1rem; font-family: 'Mea Culpa','Great Vibes',cursive; font-size: clamp(3rem,5vw,4.5rem); font-weight: 400; line-height: 1.2; color: var(--ink); }
 .character-class { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; line-height: 1.45; color: var(--lavender-deep); }
 .character-class span { color: rgba(41,37,35,.48); }
 .character-sheet-angel .character-class { color: var(--ivy); }
@@ -193,7 +193,7 @@ body {
   .character-sheet { border-radius: 1.6rem; padding: 1.3rem; }
   .character-header { grid-template-columns: 5rem minmax(0,1fr); gap: .95rem; }
   .character-photo { width: 5rem; }
-  .character-header h3 { margin-top: .4rem; margin-bottom: .7rem; line-height: 1.14; }
+  .character-header h3 { margin-top: .75rem; margin-bottom: 1.05rem; line-height: 1.2; }
   .character-traits p { font-size: .94rem; }
 }
 

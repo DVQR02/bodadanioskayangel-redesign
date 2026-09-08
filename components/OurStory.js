@@ -123,15 +123,9 @@ export default function OurStory({ items }) {
       <Reveal className="story-heading">
         <p className="story-overline">Un nosotros, poco a poco</p>
         <h2 id="our-story-title">Nuestra historia</h2>
+        <div className="divider-paw" aria-hidden="true">🐾</div>
         <p className="story-chapters">en 8 capítulos</p>
         <p className="story-intro">Cómo estos dos seres, uno creativo y otro analítico, pasaron a ser un “nosotros”.</p>
-        <div className="story-mood-divider" aria-hidden="true">
-          <i className="story-leaf" />
-          <span className="story-brush" />
-          <b>A<span>♥</span></b>
-          <span className="story-brush" />
-          <i className="story-leaf story-leaf-reverse" />
-        </div>
       </Reveal>
 
       <div ref={timelineRef} className="story-timeline">

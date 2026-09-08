@@ -6,18 +6,18 @@ import Reveal from "@/components/Reveal";
 export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
   const [active, setActive] = useState(0);
   const touchStart = useRef(null);
-  const person = personas[active];
 
-  const move = (direction) => {
-    setActive((current) => (current + direction + personas.length) % personas.length);
-  };
-
+  const move = (direction) => setActive((current) => (current + direction + personas.length) % personas.length);
   const finishSwipe = (clientX) => {
     if (touchStart.current === null) return;
     const distance = clientX - touchStart.current;
     touchStart.current = null;
     if (Math.abs(distance) > 45) move(distance < 0 ? 1 : -1);
   };
+  const visiblePeople = Array.from(
+    { length: Math.min(3, personas.length) },
+    (_, offset) => personas[(active + offset) % personas.length]
+  );
 
   return (
     <div className="wedding-party">
@@ -27,10 +27,9 @@ export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
             <p>Los que hicieron posible el comienzo</p>
             <h3>Nuestros padres</h3>
           </Reveal>
-
           <div className="party-parents-grid">
             {padres.map((parent, index) => (
-              <Reveal key={parent.nombre} delay={index * 120}>
+              <Reveal key={parent.nombre} delay={index * 100} className="party-parent-reveal">
                 <article className={`party-parent-card party-parent-${index + 1}`}>
                   <div className="party-parent-photo">
                     <img loading="lazy" decoding="async" src={parent.imagen} alt={parent.nombre} />
@@ -47,13 +46,12 @@ export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
         </div>
       )}
 
-      {person && (
+      {personas.length > 0 && (
         <div className="party-carousel-wrap">
           <Reveal className="party-subheading party-carousel-heading">
             <p>El equipo que completa la aventura</p>
             <h3>Padrinos, damas, caballeros y el bichón</h3>
           </Reveal>
-
           <div
             className="party-carousel"
             tabIndex={0}
@@ -65,42 +63,24 @@ export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
             onTouchStart={(event) => { touchStart.current = event.touches[0].clientX; }}
             onTouchEnd={(event) => finishSwipe(event.changedTouches[0].clientX)}
           >
-            <article key={active} className={`party-person-card party-tone-${active % 2 ? "sage" : "lavender"}`} aria-live="polite">
-              <div className="party-person-photo">
-                <img loading="eager" decoding="async" src={person.imagen} alt={person.nombre} />
-                <span aria-hidden="true">{String(active + 1).padStart(2, "0")}</span>
-              </div>
-              <div className="party-person-copy">
-                <p className="party-person-role">{person.rol}</p>
-                <h4>{person.nombre}</h4>
-                <div className="party-person-flourish" aria-hidden="true"><i /><b>♥</b><i /></div>
-                <p className="party-person-bio">{person.bio}</p>
-                <p className="party-swipe-hint">Desliza para conocer al resto</p>
-              </div>
-            </article>
-
-            <div className="party-controls">
-              <button type="button" onClick={() => move(-1)} aria-label="Ver persona anterior">
-                <span aria-hidden="true">←</span> Anterior
-              </button>
-              <p><strong>{String(active + 1).padStart(2, "0")}</strong><span>/</span>{String(personas.length).padStart(2, "0")}</p>
-              <button type="button" onClick={() => move(1)} aria-label="Ver siguiente persona">
-                Siguiente <span aria-hidden="true">→</span>
-              </button>
-            </div>
-
-            <div className="party-dots" role="tablist" aria-label="Elegir persona del cortejo">
-              {personas.map((item, index) => (
-                <button
-                  key={item.nombre}
-                  type="button"
-                  role="tab"
-                  aria-selected={active === index}
-                  aria-label={`Ver a ${item.nombre}`}
-                  className={active === index ? "is-active" : ""}
-                  onClick={() => setActive(index)}
-                />
+            <div key={active} className="party-person-grid" aria-live="polite">
+              {visiblePeople.map((person, index) => (
+                <article key={person.nombre} className={`party-person-card party-tone-${(active + index) % 3}`}>
+                  <div className="party-person-photo">
+                    <img loading={index === 0 ? "eager" : "lazy"} decoding="async" src={person.imagen} alt={person.nombre} />
+                  </div>
+                  <div className="party-person-copy">
+                    <p className="party-person-role">{person.rol}</p>
+                    <h4>{person.nombre}</h4>
+                    <p className="party-person-bio">{person.bio}</p>
+                  </div>
+                </article>
               ))}
+            </div>
+            <div className="party-controls">
+              <button type="button" onClick={() => move(-1)} aria-label="Ver persona anterior"><span aria-hidden="true">←</span> Anterior</button>
+              <p className="party-swipe-hint">Desliza para conocer al resto</p>
+              <button type="button" onClick={() => move(1)} aria-label="Ver siguiente persona">Siguiente <span aria-hidden="true">→</span></button>
             </div>
           </div>
         </div>

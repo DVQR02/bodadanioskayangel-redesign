@@ -85,7 +85,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <ul className="md:hidden bg-crema/95 backdrop-blur-md border-t border-lavanda-200 px-4 py-3 flex flex-col gap-3 text-sm">
+        <ul className="mobile-nav-panel md:hidden bg-crema/95 backdrop-blur-md border-t border-lavanda-200 px-4 py-3 flex flex-col gap-3 text-sm">
           {links.map((l) => (
             <li key={l.href}>
               <Link
@@ -105,7 +105,7 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="navbar-spotify block py-1.5 text-lavanda-900"
             >
-              🎵 Abrir en Spotify
+              🎵 Spotify
             </a>
           </li>
           <li>

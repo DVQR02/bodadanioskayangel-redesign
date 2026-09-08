@@ -69,6 +69,7 @@ export default function CouplePortrait({ historia }) {
     <Reveal className="couple-heading">
       <p className="couple-overline">Dos mundos, una misma partida</p>
       <h2>Conoce a los personajes</h2>
+      <div className="divider-paw" aria-hidden="true">🐾</div>
       <p>Una artista que convierte cualquier idea en proyecto y un científico que intenta ordenarlo todo en columnas. Sorprendentemente, funciona.</p>
     </Reveal>
     <div className="character-grid">

@@ -1,14 +1,14 @@
 import Reveal from "./Reveal";
 
 const iconPaths = {
-  dani: ["home", "work", "brush", "flame", "cheese", "paw", "spark"],
-  angel: ["home", "atom", "cards", "brick", "chart", "paw", "dice"],
+  dani: ["home", "gear", "brush", "candle", "cheese", "paw", "spark"],
+  angel: ["home", "radiation", "wand", "brick", "chart", "dice", "paw"],
 };
 
 // Cuando tengáis las fotos, solo hay que escribir aquí sus rutas dentro de /public.
 const characterPhotos = {
   dani: "/images/personajes/danioska-profile.jpg",
-  angel: "/images/personajes/angel-profile-close.jpg",
+  angel: "/images/personajes/angel-profile-close-2.jpg",
 };
 
 const characterProfiles = {
@@ -27,14 +27,14 @@ const characterProfiles = {
 function TraitIcon({ type }) {
   return <svg viewBox="0 0 32 32" aria-hidden="true" className="trait-icon">
     {type === "home" && <><path d="M6 15 16 7l10 8"/><path d="M9 14v11h14V14M13 25v-7h6v7"/></>}
-    {type === "work" && <><rect x="6" y="10" width="20" height="15" rx="3"/><path d="M12 10V7h8v3M6 16h20"/></>}
-    {type === "brush" && <><path d="M24 5 12 17"/><path d="M13 16c-5 0-7 4-7 9 5 0 9-2 9-7"/></>}
-    {type === "flame" && <path d="M17 5c2 6-4 7-2 12 1-2 3-3 4-6 4 4 5 7 4 11-1 4-4 6-8 6-5 0-8-3-8-8 0-5 4-8 7-11 0 4 1 5 3 6"/>}
-    {type === "cheese" && <><path d="m6 17 16-9 5 6-16 10H6Z"/><circle cx="17" cy="15" r="1.5"/><circle cx="11" cy="19" r="1"/></>}
+    {type === "gear" && <><circle cx="16" cy="16" r="5"/><path d="M16 5v4M16 23v4M5 16h4M23 16h4M8.2 8.2l2.9 2.9M20.9 20.9l2.9 2.9M23.8 8.2l-2.9 2.9M11.1 20.9l-2.9 2.9"/><path d="M12 6.2 13.5 9M20 6.2 18.5 9M25.8 12 23 13.5M25.8 20 23 18.5M20 25.8 18.5 23M12 25.8 13.5 23M6.2 20 9 18.5M6.2 12 9 13.5"/></>}
+    {type === "brush" && <><path d="M25.5 5.5c-1.4-1.4-3.4-.8-4.7.5L11 15.8l5.2 5.2 9.7-9.8c1.3-1.3 1-4.2-.4-5.7Z"/><path d="m11 15.8-2.4 2.4 5.2 5.2 2.4-2.4M8.7 18.3c-4.1.7-4.9 4.3-4.7 8.7 4.4.2 8-.6 8.7-4.7"/><path d="M6.5 23.8c1.3.1 2.1-.3 2.8-1"/></>}
+    {type === "candle" && <><path d="M11 14h10v12H11zM9 26h14"/><path d="M13 14v3l2-1.5 2 1.5 2-3"/><path d="M16 4c3 3 3.1 5.5 0 8-3.1-2.5-3-5 0-8Z"/><path d="M16 12v2"/></>}
+    {type === "cheese" && <><path d="M5 15 21 7l6 7-16 11H5Z"/><path d="M5 15h22M11 15v10"/><circle cx="18.5" cy="11.5" r="1.5"/><circle cx="20" cy="19" r="1.8"/><circle cx="8" cy="19" r="1.2"/></>}
     {type === "paw" && <><ellipse cx="16" cy="21" rx="6" ry="5"/><circle cx="8" cy="15" r="2.5"/><circle cx="13" cy="10" r="2.5"/><circle cx="20" cy="10" r="2.5"/><circle cx="25" cy="15" r="2.5"/></>}
     {type === "spark" && <><path d="M16 4c0 7-3 10-10 10 7 0 10 3 10 10 0-7 3-10 10-10-7 0-10-3-10-10Z"/><path d="M25 21c0 3-1 4-4 4 3 0 4 1 4 4 0-3 1-4 4-4-3 0-4-1-4-4Z"/></>}
-    {type === "atom" && <><circle cx="16" cy="16" r="2"/><ellipse cx="16" cy="16" rx="12" ry="5"/><ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(60 16 16)"/><ellipse cx="16" cy="16" rx="12" ry="5" transform="rotate(120 16 16)"/></>}
-    {type === "cards" && <><rect x="8" y="7" width="14" height="19" rx="2" transform="rotate(-8 15 16)"/><path d="M18 7h5a2 2 0 0 1 2 2v16M15 13c-3-4-7 1 0 6 7-5 3-10 0-6Z"/></>}
+    {type === "radiation" && <><circle cx="16" cy="16" r="2.4"/><circle cx="16" cy="16" r="11.5"/><path d="M14.5 12.7C10 11.2 8 8.5 8.2 6.8c4-2.5 8-1.6 8.8 4.8M19 14.2c2.3-4.1 5.4-5.3 7-4.5 1.2 4.5-.8 8.1-5.6 7.5M18.5 19.2c2.1 4.2 1.4 7.3-.1 8.2-4.7-.7-7.3-3.9-5-8.2"/></>}
+    {type === "wand" && <><path d="m7 25 13-13M5.5 26.5l3-3"/><path d="M23 4c0 3.4-1.6 5-5 5 3.4 0 5 1.6 5 5 0-3.4 1.6-5 5-5-3.4 0-5-1.6-5-5ZM10 5c0 2-1 3-3 3 2 0 3 1 3 3 0-2 1-3 3-3-2 0-3-1-3-3ZM25 19c0 1.7-.8 2.5-2.5 2.5 1.7 0 2.5.8 2.5 2.5 0-1.7.8-2.5 2.5-2.5-1.7 0-2.5-.8-2.5-2.5Z"/></>}
     {type === "brick" && <><rect x="5" y="7" width="22" height="18" rx="2"/><path d="M5 14h22M5 21h22M12 7v7M21 7v7M9 14v7M19 14v7"/></>}
     {type === "chart" && <><path d="M6 26V7M6 26h21"/><rect x="10" y="18" width="3" height="5"/><rect x="16" y="13" width="3" height="10"/><rect x="22" y="8" width="3" height="15"/></>}
     {type === "dice" && <><rect x="6" y="6" width="20" height="20" rx="4"/><circle cx="11" cy="11" r="1.4"/><circle cx="21" cy="11" r="1.4"/><circle cx="16" cy="16" r="1.4"/><circle cx="11" cy="21" r="1.4"/><circle cx="21" cy="21" r="1.4"/></>}

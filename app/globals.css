@@ -601,6 +601,14 @@ h1, h2, h3, h4 {
 .party-position-second { z-index: 3; transform: translateX(2%) rotateY(-4deg) scale(.97); transform-origin: left center; }
 .party-position-before { z-index: 1; opacity: .18; filter: blur(1px); transform: translateX(-157%) translateZ(-130px) rotateY(12deg) scale(.84); }
 .party-position-after { z-index: 1; opacity: .18; filter: blur(1px); transform: translateX(57%) translateZ(-130px) rotateY(-12deg) scale(.84); }
+.party-carousel.is-moving-next .party-position-before { opacity: 0; transform: translateX(-188%) translateZ(-190px) rotateY(16deg) scale(.72); }
+.party-carousel.is-moving-next .party-position-first { z-index: 1; opacity: .18; filter: blur(1px); transform: translateX(-157%) translateZ(-130px) rotateY(12deg) scale(.84); }
+.party-carousel.is-moving-next .party-position-second { transform: translateX(-102%) rotateY(4deg) scale(.97); transform-origin: right center; }
+.party-carousel.is-moving-next .party-position-after { z-index: 3; opacity: 1; filter: none; transform: translateX(2%) rotateY(-4deg) scale(.97); transform-origin: left center; }
+.party-carousel.is-moving-previous .party-position-after { opacity: 0; transform: translateX(88%) translateZ(-190px) rotateY(-16deg) scale(.72); }
+.party-carousel.is-moving-previous .party-position-second { z-index: 1; opacity: .18; filter: blur(1px); transform: translateX(57%) translateZ(-130px) rotateY(-12deg) scale(.84); }
+.party-carousel.is-moving-previous .party-position-first { transform: translateX(2%) rotateY(-4deg) scale(.97); transform-origin: left center; }
+.party-carousel.is-moving-previous .party-position-before { z-index: 3; opacity: 1; filter: none; transform: translateX(-102%) rotateY(4deg) scale(.97); transform-origin: right center; }
 .party-tone-1 { border-color: rgba(102,118,83,.19); background: rgba(246,248,242,.9); }
 .party-tone-2 { border-color: rgba(175,202,219,.28); background: rgba(246,250,251,.9); }
 .party-person-photo { width: min(11rem,72%); aspect-ratio: 1; flex: none; overflow: hidden; border: .48rem solid rgba(185,161,206,.22); border-radius: 50%; background: #eee8ef; }
@@ -615,6 +623,7 @@ h1, h2, h3, h4 {
 .party-controls button { justify-self: start; padding: .72rem 1rem; border: 1px solid rgba(114,83,154,.2); border-radius: 999px; background: rgba(255,253,248,.8); font-size: .69rem; letter-spacing: .13em; text-transform: uppercase; color: var(--ink); transition: color .25s,background .25s,transform .25s; }
 .party-controls button:last-child { justify-self: end; }
 .party-controls button:hover { color: #fff; background: var(--lavender-deep); transform: translateY(-2px); }
+.party-controls button:disabled { cursor: wait; opacity: .48; transform: none; }
 .party-swipe-hint { font-size: .58rem; letter-spacing: .17em; text-transform: uppercase; color: rgba(41,37,35,.45); }
 @media (max-width: 767px) {
   .party-parents-grid { grid-template-columns: 1fr; }
@@ -624,6 +633,10 @@ h1, h2, h3, h4 {
   .party-person-stage { height: auto; perspective: none; }
   .party-person-card { position: relative; top: auto; left: auto; width: 100%; min-height: 35rem; padding: 1.8rem 1.5rem 2rem; transform: none; }
   .party-person-card:not(.party-position-first) { display: none; }
+  .party-carousel.is-moving-next .party-position-first { display: flex; opacity: 0; filter: none; transform: translateX(-30%) scale(.96); }
+  .party-carousel.is-moving-previous .party-position-first { display: flex; opacity: 0; filter: none; transform: translateX(30%) scale(.96); }
+  .party-carousel.is-settling-next .party-position-first { animation: partyEnterNext .46s cubic-bezier(.2,.75,.22,1) both; }
+  .party-carousel.is-settling-previous .party-position-first { animation: partyEnterPrevious .46s cubic-bezier(.2,.75,.22,1) both; }
   .party-person-photo { width: 10.5rem; }
   .party-person-copy h4 { font-size: 2.2rem; }
   .party-person-bio { font-size: 1rem; line-height: 1.58; }
@@ -631,6 +644,8 @@ h1, h2, h3, h4 {
   .party-controls button { padding: .68rem .75rem; font-size: .58rem; letter-spacing: .08em; }
   .party-swipe-hint { max-width: 7.5rem; text-align: center; }
 }
+@keyframes partyEnterNext { from { opacity: 0; transform: translateX(30%) scale(.96); } to { opacity: 1; transform: none; } }
+@keyframes partyEnterPrevious { from { opacity: 0; transform: translateX(-30%) scale(.96); } to { opacity: 1; transform: none; } }
 
 /* Accessibility: reduce motion */
 @media (prefers-reduced-motion: reduce) {

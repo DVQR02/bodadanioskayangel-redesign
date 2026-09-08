@@ -6,7 +6,10 @@ import Reveal from "@/components/Reveal";
 export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
   const [active, setActive] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [motion, setMotion] = useState(null);
+  const [settling, setSettling] = useState(null);
   const touchStart = useRef(null);
+  const timers = useRef([]);
 
   useEffect(() => {
     const media = window.matchMedia("(min-width: 768px)");
@@ -16,9 +19,18 @@ export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
     return () => media.removeEventListener?.("change", update);
   }, []);
 
+  useEffect(() => () => timers.current.forEach(clearTimeout), []);
+
   const move = (direction) => {
-    const distance = isDesktop ? 2 : 1;
-    setActive((current) => (current + direction * distance + personas.length) % personas.length);
+    if (motion) return;
+    const name = direction > 0 ? "next" : "previous";
+    setMotion(name);
+    timers.current.push(setTimeout(() => {
+      setActive((current) => (current + direction + personas.length) % personas.length);
+      setMotion(null);
+      setSettling(name);
+      timers.current.push(setTimeout(() => setSettling(null), 480));
+    }, 620));
   };
   const finishSwipe = (clientX) => {
     if (touchStart.current === null) return;
@@ -64,10 +76,10 @@ export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
         <div className="party-carousel-wrap">
           <Reveal className="party-subheading party-carousel-heading">
             <p>El equipo que completa la aventura</p>
-            <h3>Padrinos, damas, caballeros y el bichón</h3>
+            <h3>Padrinos, damas y caballeros</h3>
           </Reveal>
           <div
-            className="party-carousel"
+            className={`party-carousel ${motion ? `is-moving-${motion}` : ""} ${settling ? `is-settling-${settling}` : ""}`}
             tabIndex={0}
             aria-label="Carrusel del cortejo"
             onKeyDown={(event) => {
@@ -77,10 +89,10 @@ export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
             onTouchStart={(event) => { touchStart.current = event.touches[0].clientX; }}
             onTouchEnd={(event) => finishSwipe(event.changedTouches[0].clientX)}
           >
-            <div key={active} className="party-person-stage" aria-live="polite">
+            <div className="party-person-stage" aria-live="polite">
               {visiblePeople.map(({ person, position }, index) => (
                 <article
-                  key={`${position}-${person.nombre}`}
+                  key={person.nombre}
                   className={`party-person-card party-position-${position} party-tone-${(active + index) % 3}`}
                   aria-hidden={position === "before" || position === "after" || (!isDesktop && position === "second")}
                 >
@@ -96,9 +108,9 @@ export default function WeddingPartyCarousel({ padres = [], personas = [] }) {
               ))}
             </div>
             <div className="party-controls">
-              <button type="button" onClick={() => move(-1)} aria-label="Ver persona anterior"><span aria-hidden="true">←</span> Anterior</button>
+              <button type="button" disabled={Boolean(motion)} onClick={() => move(-1)} aria-label="Ver persona anterior"><span aria-hidden="true">←</span> Anterior</button>
               <p className="party-swipe-hint">Desliza para conocer al resto</p>
-              <button type="button" onClick={() => move(1)} aria-label="Ver siguiente persona">Siguiente <span aria-hidden="true">→</span></button>
+              <button type="button" disabled={Boolean(motion)} onClick={() => move(1)} aria-label="Ver siguiente persona">Siguiente <span aria-hidden="true">→</span></button>
             </div>
           </div>
         </div>

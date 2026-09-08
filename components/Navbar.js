@@ -25,10 +25,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`no-print fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+      className={`site-nav no-print fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled
-          ? "bg-crema/85 backdrop-blur-md shadow-soft"
-          : "bg-transparent"
+          ? "is-scrolled bg-crema/85 backdrop-blur-md shadow-soft"
+          : "is-hero bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -38,7 +38,7 @@ export default function Navbar() {
             aria-label={`Monograma de ${site.novios.nombres}`}
             className="navbar-monogram w-11 h-10 md:w-12 md:h-11"
           />
-          <span className="hidden sm:block text-xs uppercase tracking-[0.3em] text-lavanda-700/70">
+          <span className="navbar-date hidden sm:block text-xs uppercase tracking-[0.3em] text-lavanda-700/70">
             {site.fecha.legible_corto}
           </span>
         </Link>
@@ -48,9 +48,9 @@ export default function Navbar() {
           aria-label="Menú"
           className="md:hidden p-2 text-lavanda-700"
         >
-          <span className="block w-6 h-0.5 bg-lavanda-700 mb-1.5" />
-          <span className="block w-6 h-0.5 bg-lavanda-700 mb-1.5" />
-          <span className="block w-6 h-0.5 bg-lavanda-700" />
+          <span className="navbar-hamburger-line block w-6 h-0.5 bg-lavanda-700 mb-1.5" />
+          <span className="navbar-hamburger-line block w-6 h-0.5 bg-lavanda-700 mb-1.5" />
+          <span className="navbar-hamburger-line block w-6 h-0.5 bg-lavanda-700" />
         </button>
 
         <ul className="hidden md:flex items-center gap-5 text-sm">
@@ -58,7 +58,7 @@ export default function Navbar() {
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-tinta/80 hover:text-lavanda-700 transition"
+                className="navbar-link text-tinta/80 hover:text-lavanda-700 transition"
               >
                 {l.label}
               </Link>

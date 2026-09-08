@@ -1,46 +1,76 @@
 "use client";
-import site from "@/content/site.json";
-import WatercolorMark from "./WatercolorMark";
+
+import { useEffect, useRef } from "react";
 
 export default function Hero() {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let frame;
+    const update = () => {
+      const rect = hero.getBoundingClientRect();
+      const distance = Math.max(hero.offsetHeight - window.innerHeight, 1);
+      const progress = Math.min(1, Math.max(0, -rect.top / distance));
+
+      hero.style.setProperty("--hero-scale", String(1 + progress * 0.075));
+      hero.style.setProperty("--hero-shift", `${progress * -48}px`);
+      hero.style.setProperty("--hero-fade", String(1 - progress * 0.9));
+      hero.style.setProperty("--hero-veil", String(0.12 + progress * 0.48));
+    };
+
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
   return (
-    <section id="inicio" className="hero-scene relative min-h-[100svh] overflow-hidden px-5 pb-10 pt-24 text-center">
-      <div className="hero-wash hero-wash-left" aria-hidden="true" />
-      <div className="hero-wash hero-wash-right" aria-hidden="true" />
+    <section id="inicio" ref={heroRef} className="hero-scene">
+      <div className="hero-stage">
+        <img src="/images/hero/portada-danioska-angel.jpg" alt="" className="hero-photo-backdrop" aria-hidden="true" />
+        <img
+          src="/images/hero/portada-danioska-angel.jpg"
+          alt="Danioska y Ángel frente a la iglesia"
+          className="hero-photo-main"
+          fetchPriority="high"
+        />
+        <div className="hero-photo-overlay" aria-hidden="true" />
+        <div className="hero-bottom-glow" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh-8.5rem)] max-w-5xl flex-col items-center justify-center">
-        <p className="hero-kicker animate-fadeUp">Para celebrar la boda de</p>
-
-        <h1 className="hero-names animate-fadeUp">
-          <span>Danioska</span>
-          <span className="hero-ampersand">&amp;</span>
-          <span>Ángel</span>
-        </h1>
-
-        <WatercolorMark className="mt-1 h-8 w-24 text-[#8a6aaa]" />
-
-        <div className="hero-art-wrap" aria-hidden="true">
-          <img
-            src="/images/decor/ermita-otto-hero.png"
-            alt=""
-            className="hero-art"
-            fetchPriority="high"
-          />
+        <div className="hero-content">
+          <span className="hero-monogram" role="img" aria-label="Monograma de Danioska y Ángel" />
+          <p className="hero-kicker">Para celebrar la boda de</p>
+          <h1 className="hero-names">
+            <span>Danioska</span>
+            <span className="hero-ampersand">&amp;</span>
+            <span>Ángel</span>
+          </h1>
+          <div className="hero-date" aria-label="2 de abril de 2027">
+            <span>02</span><i /><span>04</span><i /><span>2027</span>
+          </div>
+          <p className="hero-place">Madrid · España</p>
         </div>
 
-        <div className="hero-date animate-fadeUp">
-          <span>02</span><i /> <span>04</span><i /> <span>2027</span>
+        <div className="hero-actions">
+          <a href="#rsvp" className="hero-rsvp">Confirmar asistencia</a>
+          <a href="#countdown" className="hero-scroll" aria-label="Continuar hacia la cuenta atrás">
+            <span>Desliza para descubrir</span>
+            <span className="hero-scroll-line" aria-hidden="true" />
+          </a>
         </div>
-        <p className="hero-place">Madrid · España</p>
-
-        <a href="#rsvp" className="wedding-button mt-6">
-          Confirmar asistencia
-        </a>
-
-        <a href="#historia" className="hero-scroll mt-8" aria-label="Descubrir la invitación">
-          <span>Descubre nuestra historia</span>
-          <span className="hero-scroll-line" aria-hidden="true" />
-        </a>
       </div>
     </section>
   );

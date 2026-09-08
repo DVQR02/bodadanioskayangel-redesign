@@ -74,9 +74,9 @@
       { "icono": "☢️", "texto": "Radiofísico hospitalario. La familia no sabe muy bien qué significa, pero suena importante." },
       { "icono": "🎩", "texto": "Mago de formación. De ejecución ya hablamos otro día." },
       { "icono": "🧩", "texto": "LEGO no tiene edad recomendada. Tiene presupuesto recomendado." },
-      { "icono": "📊", "texto": "Le encanta improvisar. Solo necesita saber dónde, cuándo, cuánto dura y tenerlo apuntado en el Excel." },
+      { "icono": "🎲", "texto": "Colecciona juegos de mesa. Incluso ha jugado a algunos." },
       { "icono": "🐶", "texto": "Que Otto lo aceptara como uno de los suyos sigue siendo su mayor logro curricular." },
-      { "icono": "🎲", "texto": "Colecciona juegos de mesa. Incluso ha jugado a algunos." }
+      { "icono": "📊", "texto": "Le encanta improvisar. Solo necesita saber dónde, cuándo, cuánto dura y tenerlo apuntado en el Excel." }
     ]
   },
   "rpg": {

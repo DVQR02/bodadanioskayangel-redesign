@@ -5,6 +5,25 @@ const iconPaths = {
   angel: ["home", "atom", "cards", "brick", "chart", "paw", "dice"],
 };
 
+// Cuando tengáis las fotos, solo hay que escribir aquí sus rutas dentro de /public.
+const characterPhotos = {
+  dani: "",
+  angel: "",
+};
+
+const characterProfiles = {
+  dani: {
+    className: "Hada Artesana",
+    ability: "Yo puedo hacer eso",
+    abilityDetail: "Si existe, puede hacerlo; si no sabe, aprenderá. El coste y los viajes a la tienda son irrelevantes.",
+  },
+  angel: {
+    className: "Coleccionista de reliquias",
+    ability: "Esto no se tira",
+    abilityDetail: "Acumula toda clase de artefactos: juegos, monedas, barajas, LEGO y cajas vacías.",
+  },
+};
+
 function TraitIcon({ type }) {
   return <svg viewBox="0 0 32 32" aria-hidden="true" className="trait-icon">
     {type === "home" && <><path d="M6 15 16 7l10 8"/><path d="M9 14v11h14V14M13 25v-7h6v7"/></>}
@@ -22,18 +41,27 @@ function TraitIcon({ type }) {
   </svg>;
 }
 
-function CharacterSheet({ id, name, origin, facts, rpg, delay = 0 }) {
+function CharacterPhoto({ name, src }) {
+  return <div className="character-photo">
+    {src ? <img src={src} alt={`Retrato de ${name}`} /> : <span>Foto</span>}
+  </div>;
+}
+
+function CharacterSheet({ id, name, origin, facts, delay = 0 }) {
+  const profile = characterProfiles[id];
   return <Reveal className={`character-sheet character-sheet-${id}`} delay={delay}>
     <div className="character-wash" aria-hidden="true"/>
     <header className="character-header">
-      <div className="character-seal" aria-hidden="true">{name[0]}</div>
-      <div><p className="character-origin">{origin}</p><h3>{name}</h3><p className="character-class">{rpg.clase}</p></div>
+      <CharacterPhoto name={name} src={characterPhotos[id]}/>
+      <div className="character-identity">
+        <p className="character-origin">{origin}</p>
+        <h3>{name}</h3>
+        <p className="character-class"><span>Clase:</span> {profile.className}</p>
+      </div>
     </header>
-    <div className="character-special"><span>Habilidad especial</span><p>{rpg.habilidadEspecial}</p></div>
-    <div className="character-stats" aria-label={`Atributos de ${name}`}>
-      {Object.entries(rpg.stats).map(([label,value]) => <div key={label}>
-        <span>{label}</span><div className="stat-track"><i style={{width:`${value*10}%`}}/></div><b>{value}</b>
-      </div>)}
+    <div className="character-special">
+      <span>Habilidad especial</span>
+      <p><strong>{profile.ability}</strong><em> — {profile.abilityDetail}</em></p>
     </div>
     <div className="character-divider"><span>Rasgos</span></div>
     <ul className="character-traits">
@@ -52,8 +80,8 @@ export default function CouplePortrait({ historia }) {
       <p>Una artista que convierte cualquier idea en proyecto y un científico que intenta ordenarlo todo en columnas. Sorprendentemente, funciona.</p>
     </Reveal>
     <div className="character-grid">
-      <CharacterSheet id="dani" name="Danioska" origin="Venezuela · Madrid" facts={historia.funFacts.dani} rpg={historia.rpg.dani}/>
-      <CharacterSheet id="angel" name="Ángel" origin="Córdoba · Madrid" facts={historia.funFacts.angel} rpg={historia.rpg.angel} delay={120}/>
+      <CharacterSheet id="dani" name="Danioska" origin="Venezuela · Madrid" facts={historia.funFacts.dani}/>
+      <CharacterSheet id="angel" name="Ángel" origin="Córdoba · Madrid" facts={historia.funFacts.angel} delay={120}/>
     </div>
   </div>;
 }

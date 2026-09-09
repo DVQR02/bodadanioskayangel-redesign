@@ -16,6 +16,7 @@ export default function DressCode({ content }) {
       frame = 0;
       if (reducedMotion.matches) {
         section.style.setProperty("--scope-progress", "1");
+        section.style.setProperty("--scope-open", "1");
         return;
       }
 
@@ -23,7 +24,9 @@ export default function DressCode({ content }) {
       const start = window.innerHeight * 0.82;
       const distance = rect.height + window.innerHeight * 0.35;
       const progress = Math.max(0, Math.min(1, (start - rect.top) / distance));
+      const aperture = Math.max(0, Math.min(1, (progress - 0.58) / 0.32));
       section.style.setProperty("--scope-progress", progress.toFixed(3));
+      section.style.setProperty("--scope-open", aperture.toFixed(3));
     };
 
     const schedule = () => {
@@ -48,9 +51,9 @@ export default function DressCode({ content }) {
       <div className="dresscode-wash dresscode-wash-right" aria-hidden="true" />
 
       <header className="dresscode-heading">
-        <p>Dress Code</p>
-        <h2>{content.codigo}</h2>
+        <h2>{content.titulo}</h2>
         <div className="divider-paw" aria-hidden="true">🐾</div>
+        <p className="dresscode-formal">{content.codigo}</p>
         <h3>{content.lema}</h3>
         <p className="dresscode-introduction">{content.introduccion}</p>
         <p className="dresscode-principle">{content.principio}</p>
@@ -62,20 +65,11 @@ export default function DressCode({ content }) {
           <p id="dresscode-colors-title">{content.colores.titulo}</p>
           <span />
         </div>
-        <div className="dresscode-white-layout">
-          <div className="dresscode-palette" aria-hidden="true">
-            <i className="tone-white" />
-            <i className="tone-ivory" />
-            <i className="tone-cream" />
-            <i className="tone-champagne" />
-            <i className="tone-no" />
-          </div>
-          <div className="dresscode-white-copy">
-            <h3>{content.colores.regla}</h3>
-            <p>{content.colores.detalle}</p>
-            <blockquote>{content.colores.excusa}</blockquote>
-            <strong>{content.colores.conclusion}</strong>
-          </div>
+        <div className="dresscode-white-copy">
+          <h3>{content.colores.regla}</h3>
+          <p>{content.colores.detalle}</p>
+          <blockquote>{content.colores.excusa}</blockquote>
+          <strong>{content.colores.conclusion}</strong>
         </div>
       </section>
 
@@ -89,8 +83,8 @@ export default function DressCode({ content }) {
           <p>{content.advertencia}</p>
           <em>{content.remate[0]}<br />{content.remate[1]}</em>
         </div>
-        <div className="wine-mark wine-mark-one" aria-hidden="true"><i /><i /><i /></div>
-        <div className="wine-mark wine-mark-two" aria-hidden="true"><i /><i /></div>
+        <div className="wine-mark wine-mark-one" aria-hidden="true"><i /><i /><i /><i /><i /></div>
+        <div className="wine-mark wine-mark-two" aria-hidden="true"><i /><i /><i /><i /></div>
 
         <div className="otto-scope-track" aria-label="Agente Otto 007, seguridad del dress code">
           <div className="otto-scope">

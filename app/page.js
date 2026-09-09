@@ -5,7 +5,7 @@ import RSVP from "@/components/RSVP";
 import Countdown from "@/components/Countdown";
 import FAQAccordion from "@/components/FAQAccordion";
 import MapaLugares from "@/components/MapaLugares";
-import FlagIcon from "@/components/FlagIcon";
+import CulturalDictionary from "@/components/CulturalDictionary";
 import Playlist from "@/components/Playlist";
 import CouplePortrait from "@/components/CouplePortrait";
 import OurStory from "@/components/OurStory";
@@ -101,33 +101,12 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* CULTURAL — solo frases */}
-      <Section id="culturas" elementId="two_cultures" title="Aprende a hablar como nosotros" subtitle="Un pequeño diccionario para venezolanos, madrileños y todo lo demás">
-        <div id="frases" data-element-id="bilingual_phrases" className="bg-white/60 border border-lavanda-200 rounded-3xl p-6 max-w-3xl mx-auto">
-          <div className="grid sm:grid-cols-2 gap-3 text-sm">
-            {cultural.frases.map((f, i) => (
-              <div key={i} className="p-3 rounded-xl bg-lavanda-50">
-                <p className="font-medium flex items-center gap-2">
-                  {f.venezolana && (
-                    <>
-                      <FlagIcon country="VE" className="w-5 h-3 rounded-sm shrink-0" />
-                      <span>"{f.venezolana}"</span>
-                    </>
-                  )}
-                  {f.espanola && (
-                    <>
-                      <FlagIcon country="ES" className="w-5 h-3 rounded-sm shrink-0" />
-                      <span>"{f.espanola}"</span>
-                    </>
-                  )}
-                </p>
-                <p className="text-tinta/70 italic">{f.traduccion}</p>
-                <p className="text-xs text-tinta/50 mt-1">{f.uso}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+      {/* DICCIONARIO VENEKOESPAÑOL */}
+      <Section id="culturas" elementId="two_cultures" className="culture-scene" title="Aprende a hablar como nosotros" subtitle="Un pequeño diccionario para venezolanos, españoles y todo lo demás">
+        <CulturalDictionary content={cultural} />
       </Section>
+
+      <SceneTransition variant="culture-dress" />
 
       {/* DRESS CODE */}
       <Section id="dresscode" elementId="color_guide" className="dresscode-scene">

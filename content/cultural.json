@@ -41,9 +41,9 @@
     }
   ],
   "frases": [
-    { "venezolana": "Una ñinga", "espanola": "Una mijita", "significado": "Un poquito. Pero poquito de verdad." },
+    { "venezolana": "Una ñinga", "espanola": "Una mijilla", "significado": "Un poquito. Pero poquito de verdad." },
     { "venezolana": "Burda", "espanola": "Una jartá", "significado": "Mucho. Muchísimo. Una barbaridad." },
-    { "venezolana": "Ser ladilla", "espanola": "Ser jartible", "significado": "Ser pesado. De esos que no saben cuándo parar." },
+    { "venezolana": "Ser ladilla", "espanola": "Ser pesado", "significado": "Ser pesado. De esos que no saben cuándo parar." },
     { "venezolana": "Tontería / una mariquera", "espanola": "Pego / chuminá", "significado": "Una tontería, una cosa sin demasiada importancia." },
     { "venezolana": "Huevo sin sal", "espanola": "Esaborío" },
     { "venezolana": "Formar un peo", "espanola": "Montar un pollo", "significado": "Armar un lío, un problema o un escándalo." },
@@ -59,9 +59,7 @@
     { "venezolana": "Qué chimbo", "espanola": "Qué bajón" },
     { "venezolana": "Tener algo encaletado", "espanola": "Tener algo escondido" },
     { "venezolana": "Amapuchar", "espanola": "Achuchar" },
-    { "venezolana": "Cagado de frío", "espanola": "Arrecío" }
-  ],
-  "rapidas": [
+    { "venezolana": "Cagado de frío", "espanola": "Arrecío" },
     { "venezolana": "Qué chévere", "espanola": "Qué guay" },
     { "venezolana": "Echar broma", "espanola": "Hacer el tonto" }
   ],

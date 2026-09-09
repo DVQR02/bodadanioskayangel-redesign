@@ -24,15 +24,6 @@ export default function CulturalDictionary({ content }) {
         ))}
       </div>
 
-      <Reveal className="culture-quick">
-        <p className="culture-eyebrow">Para conversaciones a toda velocidad</p>
-        <div className="culture-quick-grid">
-          {content.rapidas.map((phrase) => (
-            <p key={phrase.venezolana}><span>🇻🇪 {phrase.venezolana}</span><b aria-hidden="true">→</b><span>🇪🇸 {phrase.espanola}</span></p>
-          ))}
-        </div>
-      </Reveal>
-
       <Reveal className="culture-diplomacy">
         <p className="culture-eyebrow">Reservado para cuando perdemos la diplomacia</p>
         <div><strong>🇻🇪 {content.diplomacia.venezolana}</strong><span aria-hidden="true">↔</span><strong>🇪🇸 {content.diplomacia.espanola}</strong></div>

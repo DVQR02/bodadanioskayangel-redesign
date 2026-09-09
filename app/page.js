@@ -130,24 +130,11 @@ export default function Home() {
       <Section
         id="rsvp"
         elementId="rsvp_form"
+        className="rsvp-scene"
         title="Confirma tu magia"
-        subtitle={`Rellena el formulario antes del ${site.fecha.rsvpLimite}. Menú, alergias, canción y más.`}
+        subtitle="Una última pregunta antes de empezar la cuenta atrás"
       >
-        <div className="max-w-3xl mx-auto mb-8 text-center bg-lavanda-100/60 border border-lavanda-300 rounded-2xl px-5 py-4">
-          <p className="text-xs uppercase tracking-widest text-lavanda-700">
-            Fecha límite
-          </p>
-          <p className="font-serif text-2xl text-tinta mt-1">
-            {site.fecha.rsvpLimite}
-          </p>
-          <p className="text-xs text-tinta/70 mt-1">
-            Después de esta fecha no podremos cerrar el menú, el sitio en la mesa
-            ni la plaza en el autobús.
-          </p>
-        </div>
-
         <RSVP />
-
       </Section>
 
       {/* PLAYLIST */}

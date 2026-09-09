@@ -11,6 +11,7 @@ import CouplePortrait from "@/components/CouplePortrait";
 import OurStory from "@/components/OurStory";
 import SceneTransition from "@/components/SceneTransition";
 import WeddingPartyCarousel from "@/components/WeddingPartyCarousel";
+import DressCode from "@/components/DressCode";
 import site from "@/content/site.json";
 import historia from "@/content/historia.json";
 import evento from "@/content/evento.json";
@@ -129,36 +130,8 @@ export default function Home() {
       </Section>
 
       {/* DRESS CODE */}
-      <Section id="dresscode" elementId="color_guide" title={dresscode.titulo} className="dresscode-scene">
-        <div className="dresscode-editorial">
-          <figure className="dresscode-portrait">
-            <span className="dresscode-tape" aria-hidden="true" />
-            <img loading="lazy" decoding="async" src={dresscode.imagen} alt="Otto vestido de gala con una pistola de agua" />
-            <figcaption>Seguridad del dress code</figcaption>
-          </figure>
-
-          <div className="dresscode-copy">
-            <p className="dresscode-label">Código de vestimenta</p>
-            <p className="dresscode-formal">{dresscode.codigo}</p>
-            <h3>{dresscode.lema}</h3>
-            <p className="dresscode-intro">{dresscode.introduccion}</p>
-            <p className="dresscode-principle">{dresscode.principio}</p>
-
-            <aside className="dresscode-colors">
-              <p className="dresscode-colors-title">{dresscode.colores.titulo}</p>
-              <h4>{dresscode.colores.regla}</h4>
-              <p>{dresscode.colores.detalle}</p>
-              <blockquote>{dresscode.colores.excusa}</blockquote>
-              <p className="dresscode-colors-ending">{dresscode.colores.conclusion}</p>
-            </aside>
-
-            <aside className="dresscode-warning">
-              <span aria-hidden="true">Aviso del cortejo</span>
-              <strong>{dresscode.advertencia}</strong>
-              <p>{dresscode.remate[0]}<br />{dresscode.remate[1]}</p>
-            </aside>
-          </div>
-        </div>
+      <Section id="dresscode" elementId="color_guide" className="dresscode-scene">
+        <DressCode content={dresscode} />
       </Section>
 
       {/* CORTEJO */}

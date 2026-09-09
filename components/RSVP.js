@@ -32,7 +32,7 @@ export default function RSVP() {
         <div className="rsvp-deadline">
           <span>Confirma antes del</span>
           <strong>{site.fecha.rsvpLimite}</strong>
-          <p>Después no podremos cerrar el menú, tu sitio en la mesa ni la plaza en el autobús.</p>
+          <p>Después de esa fecha, no podremos garantizarte un sitio en la mesa para celebrar con nosotros.</p>
         </div>
         <div className="rsvp-actions">
           <a className="rsvp-primary" href={formUrl} target="_blank" rel="noopener noreferrer">Confirmar asistencia <span aria-hidden="true">↗</span></a>

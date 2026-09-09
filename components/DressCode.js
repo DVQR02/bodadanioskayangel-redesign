@@ -60,6 +60,7 @@ export default function DressCode({ content }) {
       </header>
 
       <section className="dresscode-white" aria-labelledby="dresscode-colors-title">
+        <img className="dresscode-wine-art dresscode-wine-art-colors" src="/images/wine-stains-watercolor.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
         <div className="dresscode-rule-heading">
           <span />
           <p id="dresscode-colors-title">{content.colores.titulo}</p>
@@ -74,6 +75,7 @@ export default function DressCode({ content }) {
       </section>
 
       <section className="dresscode-agent" aria-labelledby="dresscode-agent-title">
+        <img className="dresscode-wine-art dresscode-wine-art-agent" src="/images/wine-stains-watercolor.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
         <div className="dresscode-rule-heading">
           <span />
           <p id="dresscode-agent-title">Aviso del cortejo</p>
@@ -83,9 +85,6 @@ export default function DressCode({ content }) {
           <p>{content.advertencia}</p>
           <em>{content.remate[0]}<br />{content.remate[1]}</em>
         </div>
-        <div className="wine-mark wine-mark-one" aria-hidden="true"><i /><i /><i /><i /><i /></div>
-        <div className="wine-mark wine-mark-two" aria-hidden="true"><i /><i /><i /><i /></div>
-
         <div className="otto-scope-track" aria-label="Agente Otto 007, seguridad del dress code">
           <div className="otto-scope">
             <div className="scope-blade scope-blade-1" />

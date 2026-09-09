@@ -12,6 +12,7 @@ import OurStory from "@/components/OurStory";
 import SceneTransition from "@/components/SceneTransition";
 import WeddingPartyCarousel from "@/components/WeddingPartyCarousel";
 import DressCode from "@/components/DressCode";
+import GuestGallery from "@/components/GuestGallery";
 import site from "@/content/site.json";
 import historia from "@/content/historia.json";
 import evento from "@/content/evento.json";
@@ -119,31 +120,11 @@ export default function Home() {
       </Section>
 
       {/* GALERÍA */}
-      <Section id="galeria" elementId="gallery" title={galeria.titulo} subtitle={galeria.subtitulo}>
-        <div className="bg-white/70 rounded-3xl border border-lavanda-200 p-8 text-center">
-          <h3 className="font-serif text-3xl text-lavanda-700">
-            {galeria.albumCompartido.titulo}
-          </h3>
-          <p className="text-tinta/70 mt-2 max-w-xl mx-auto">
-            {galeria.albumCompartido.texto}
-          </p>
-          <img
-            loading="lazy"
-            decoding="async"
-            src={galeria.albumCompartido.qrUrl}
-            alt="QR álbum compartido"
-            className="w-40 h-40 mx-auto mt-4 rounded-2xl border border-lavanda-200"
-          />
-          <a
-            href={galeria.albumCompartido.enlaceSubida}
-            target="_blank"
-            rel="noopener"
-            className="inline-block mt-4 px-6 py-2 rounded-full bg-lavanda-600 text-white hover:bg-lavanda-700"
-          >
-            Abrir álbum compartido
-          </a>
-        </div>
+      <Section id="galeria" elementId="gallery" className="gallery-scene" title={galeria.titulo} subtitle={galeria.subtitulo}>
+        <GuestGallery album={galeria.albumCompartido} />
       </Section>
+
+      <SceneTransition variant="gallery-rsvp" />
 
       {/* RSVP */}
       <Section

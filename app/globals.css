@@ -693,6 +693,46 @@ h1, h2, h3, h4 {
   .scene-transition { height: 9rem; }
 }
 
+/* Guest gallery — shared memories and upload portal */
+.gallery-scene { overflow:hidden; background:radial-gradient(circle at 12% 30%,rgba(175,202,219,.18),transparent 25rem),radial-gradient(circle at 88% 72%,rgba(219,169,177,.15),transparent 26rem),var(--paper); }
+.guest-gallery { position:relative; max-width:66rem; margin:0 auto; padding-bottom:2rem; }
+.gallery-watercolor { position:absolute; z-index:0; width:20rem; height:12rem; border-radius:50%; filter:blur(45px); opacity:.22; pointer-events:none; }
+.gallery-watercolor-one { top:15rem; left:-12rem; background:var(--sky); transform:rotate(-12deg); }.gallery-watercolor-two { right:-12rem; bottom:3rem; background:var(--petal); transform:rotate(14deg); }
+.gallery-intro { position:relative; z-index:1; max-width:42rem; margin:0 auto; text-align:center; }
+.gallery-kicker { font-size:.62rem; letter-spacing:.31em; text-transform:uppercase; color:var(--ivy); }
+.gallery-intro h3 { margin:.7rem auto 0; font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(2.25rem,5vw,3.6rem); font-weight:500; line-height:1.04; color:var(--ink); text-wrap:balance; }
+.gallery-intro > p:last-child { max-width:38rem; margin:1.15rem auto 0; font-family:'Arapey',Georgia,serif; font-size:1.08rem; line-height:1.58; color:rgba(41,37,35,.68); text-wrap:balance; }
+.gallery-composition { position:relative; z-index:1; display:grid; grid-template-columns:minmax(10rem,1fr) minmax(19rem,25rem) minmax(10rem,1fr); align-items:center; gap:clamp(.8rem,3vw,2.5rem); margin-top:4rem; }
+.gallery-polaroid { padding:.65rem .65rem 1.7rem; background:#fffdf8; box-shadow:0 24px 48px -30px rgba(49,39,54,.6); }
+.gallery-polaroid-left { transform:rotate(-7deg) translateX(1rem); }.gallery-polaroid-right { transform:rotate(6deg) translateX(-1rem); }
+.gallery-polaroid img { display:block; width:100%; aspect-ratio:4/5; object-fit:cover; filter:saturate(.82) contrast(.94); }
+.gallery-polaroid-left img { object-position:48% center; }.gallery-polaroid-right img { object-position:center 42%; }
+.gallery-polaroid span { display:block; margin-top:.7rem; font-family:'Mea Culpa','Great Vibes',cursive; font-size:1.65rem; color:var(--lavender-deep); text-align:center; }
+.gallery-upload-card { position:relative; z-index:2; padding:1.6rem 1.7rem 1.5rem; border:1px solid rgba(114,83,154,.16); background:rgba(255,253,248,.94); box-shadow:0 35px 75px -45px rgba(53,39,64,.7); text-align:center; }
+.gallery-qr-frame { position:relative; width:min(100%,19rem); margin:0 auto; padding:1rem; background:#fff; }
+.gallery-qr-frame img { display:block; width:100%; aspect-ratio:1; }
+.gallery-corner { position:absolute; width:2.2rem; height:2.2rem; border-color:var(--lavender-deep); opacity:.6; }.gallery-corner-one { top:.35rem; left:.35rem; border-top:2px solid; border-left:2px solid; }.gallery-corner-two { right:.35rem; bottom:.35rem; border-right:2px solid; border-bottom:2px solid; }
+.gallery-scan { margin-top:1.1rem; font-size:.61rem; letter-spacing:.3em; text-transform:uppercase; color:var(--lavender-deep); }
+.gallery-upload-card > a { display:inline-flex; align-items:center; gap:.7rem; margin-top:.8rem; padding:.85rem 1.45rem; border-radius:999px; background:var(--lavender-deep); box-shadow:0 15px 30px -20px rgba(69,42,91,.9); font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:#fff; transition:transform .25s ease,background .25s ease,box-shadow .25s ease; }
+.gallery-upload-card > a:hover { background:var(--ivy); box-shadow:0 18px 35px -20px rgba(52,68,40,.9); transform:translateY(-3px); }
+.gallery-upload-card small { display:block; max-width:17rem; margin:.9rem auto 0; font-family:'Arapey',Georgia,serif; font-size:.78rem; font-style:italic; line-height:1.35; color:rgba(41,37,35,.52); }
+.gallery-closing { display:grid; grid-template-columns:auto 1fr minmax(16rem,38rem) 1fr auto; align-items:center; gap:1rem; margin:4rem auto 0; color:rgba(41,37,35,.44); text-align:center; }
+.gallery-closing i { height:1px; background:linear-gradient(90deg,transparent,rgba(114,83,154,.26)); }.gallery-closing i:nth-of-type(2) { transform:scaleX(-1); }
+.gallery-closing > span { font-size:.57rem; letter-spacing:.2em; color:var(--lavender-deep); }.gallery-closing p { font-family:'Arapey',Georgia,serif; font-size:1rem; font-style:italic; line-height:1.4; }
+.scene-transition-gallery-rsvp { height:clamp(6rem,10vw,9rem); background:var(--paper); }.scene-transition-gallery-rsvp .transition-watercolor-one { background:rgba(185,161,206,.42); }.scene-transition-gallery-rsvp .transition-watercolor-two { background:rgba(255,229,151,.44); }.scene-transition-gallery-rsvp .transition-watercolor-three { background:rgba(155,170,131,.38); }
+@media (max-width:767px) {
+  .guest-gallery { padding-bottom:0; }
+  .gallery-composition { grid-template-columns:1fr; width:min(100%,23rem); margin:3rem auto 0; }
+  .gallery-upload-card { grid-row:1; padding:1.25rem 1.25rem 1.4rem; }
+  .gallery-polaroid { position:absolute; z-index:-1; width:9rem; opacity:.72; }
+  .gallery-polaroid-left { top:6rem; left:-4.2rem; transform:rotate(-9deg); }.gallery-polaroid-right { right:-4.2rem; bottom:2rem; transform:rotate(8deg); }
+  .gallery-polaroid span { font-size:1.2rem; }
+  .gallery-qr-frame { width:min(100%,17rem); }
+  .gallery-closing { grid-template-columns:auto 1fr minmax(0,15rem) 1fr auto; gap:.5rem; margin-top:3rem; }
+  .gallery-closing p { font-size:.9rem; }
+  .scene-transition-gallery-rsvp { height:6rem; }
+}
+
 /* Wedding party — compact circular portraits */
 #cortejo { position: relative; overflow: hidden; background: radial-gradient(circle at 10% 24%,rgba(175,202,219,.13),transparent 25rem),radial-gradient(circle at 92% 70%,rgba(255,229,151,.15),transparent 25rem),var(--paper); }
 .wedding-party { position: relative; }

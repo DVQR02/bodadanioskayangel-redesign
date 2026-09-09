@@ -24,7 +24,10 @@ export default function DressCode({ content }) {
       const start = window.innerHeight * 0.82;
       const distance = rect.height + window.innerHeight * 0.35;
       const progress = Math.max(0, Math.min(1, (start - rect.top) / distance));
-      const aperture = Math.max(0, Math.min(1, (progress - 0.58) / 0.32));
+      const isDesktop = window.innerWidth >= 768;
+      const apertureStart = isDesktop ? 0.4 : 0.58;
+      const apertureDuration = isDesktop ? 0.2 : 0.32;
+      const aperture = Math.max(0, Math.min(1, (progress - apertureStart) / apertureDuration));
       section.style.setProperty("--scope-progress", progress.toFixed(3));
       section.style.setProperty("--scope-open", aperture.toFixed(3));
     };
@@ -60,7 +63,7 @@ export default function DressCode({ content }) {
       </header>
 
       <section className="dresscode-white" aria-labelledby="dresscode-colors-title">
-        <img className="dresscode-wine-art dresscode-wine-art-colors" src="/images/wine-stains-watercolor.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        <img className="wine-stain wine-stain-colors" src="/images/wine-stains/blot-center.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
         <div className="dresscode-rule-heading">
           <span />
           <p id="dresscode-colors-title">{content.colores.titulo}</p>
@@ -75,7 +78,6 @@ export default function DressCode({ content }) {
       </section>
 
       <section className="dresscode-agent" aria-labelledby="dresscode-agent-title">
-        <img className="dresscode-wine-art dresscode-wine-art-agent" src="/images/wine-stains-watercolor.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
         <div className="dresscode-rule-heading">
           <span />
           <p id="dresscode-agent-title">Aviso del cortejo</p>
@@ -84,6 +86,11 @@ export default function DressCode({ content }) {
         <div className="dresscode-agent-copy">
           <p>{content.advertencia}</p>
           <em>{content.remate[0]}<br />{content.remate[1]}</em>
+        </div>
+        <div className="wine-stain-cluster" aria-hidden="true">
+          <img className="wine-stain wine-stain-ring" src="/images/wine-stains/ring-bottom.png" alt="" loading="lazy" decoding="async" />
+          <img className="wine-stain wine-stain-splash" src="/images/wine-stains/splash-left.png" alt="" loading="lazy" decoding="async" />
+          <img className="wine-stain wine-stain-drops" src="/images/wine-stains/drops-top.png" alt="" loading="lazy" decoding="async" />
         </div>
         <div className="otto-scope-track" aria-label="Agente Otto 007, seguridad del dress code">
           <div className="otto-scope">

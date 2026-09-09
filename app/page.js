@@ -141,8 +141,9 @@ export default function Home() {
       <Section
         id="playlist"
         elementId="spotify_collab"
+        className="playlist-scene"
         title="La Playlist"
-        subtitle="La banda sonora de la fiesta la ponéis vosotros: añadid vuestra canción"
+        subtitle="La banda sonora de la fiesta también lleva un poquito de vosotros"
       >
         <Playlist />
       </Section>

@@ -609,11 +609,11 @@ h1, h2, h3, h4 {
 .story-finale .story-photo-placeholder,.story-finale .story-photo > img { aspect-ratio: 3/4; object-position: center; }
 .story-proposal-polaroid { position: absolute; z-index: 4; bottom: 1.5rem; left: -8rem; display: block; width: min(48%,15rem); padding: .45rem .45rem 1.25rem; background: #fffdf8; box-shadow: 0 20px 45px -24px rgba(39,29,45,.58); transform: rotate(-6deg); }
 .story-proposal-polaroid img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
-.story-ending { position: relative; margin-top: 4rem; padding: 3.5rem 1rem 1rem; }
+.story-ending { position: relative; margin-top: 2.5rem; padding: 2.4rem 1rem .25rem; }
 .story-ending::before { content: ""; position: absolute; top: 0; left: 50%; width: min(30rem,85%); height: 4rem; border-radius: 50%; background: rgba(185,161,206,.17); filter: blur(13px); transform: translateX(-50%) rotate(-2deg); }
 .story-ending p { position: relative; font-family: 'Cormorant Garamond',Georgia,serif; font-size: clamp(2.1rem,4vw,3.2rem); font-style: italic; line-height: 1; color: var(--lavender-deep); }
-.story-ending span { display: block; margin-top: 4rem; font-size: 1.2rem; font-style: italic; color: rgba(41,37,35,.58); }
-.story-ending strong { display: block; margin-top: .8rem; font-family: 'Cormorant Garamond',Georgia,serif; font-size: clamp(1.35rem,2.4vw,1.9rem); font-weight: 500; color: var(--ink); }
+.story-ending span { display: block; margin-top: 1.5rem; font-size: 1.2rem; font-style: italic; color: rgba(41,37,35,.58); }
+.story-ending strong { display: block; margin-top: .35rem; font-family: 'Cormorant Garamond',Georgia,serif; font-size: clamp(1.35rem,2.4vw,1.9rem); font-weight: 500; color: var(--ink); }
 
 @media (max-width: 767px) {
   .our-story { margin-top: 7rem; padding-top: 5.5rem; }
@@ -640,8 +640,8 @@ h1, h2, h3, h4 {
   .story-finale .story-photo { width: 82%; margin: 2.8rem 0 4rem 0; }
   .story-finale .story-photo-placeholder,.story-finale .story-photo > img { aspect-ratio: 3/4; }
   .story-proposal-polaroid { bottom: -2.8rem; left: -3.8rem; width: 58%; }
-  .story-ending { width: calc(100% + 4.4rem); margin: 3rem 0 0 -4.4rem; padding-top: 3rem; text-align: center; }
-  .story-ending span { margin-top: 3rem; }
+  .story-ending { width: calc(100% + 4.4rem); margin: 2rem 0 0 -4.4rem; padding-top: 2.2rem; text-align: center; }
+  .story-ending span { margin-top: 1.4rem; }
   .scene-transition { height: 9rem; }
 }
 

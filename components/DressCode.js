@@ -4,10 +4,12 @@ import { useEffect, useRef } from "react";
 
 export default function DressCode({ content }) {
   const sectionRef = useRef(null);
+  const scopeTrackRef = useRef(null);
 
   useEffect(() => {
     const section = sectionRef.current;
-    if (!section) return;
+    const scopeTrack = scopeTrackRef.current;
+    if (!section || !scopeTrack) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0;
@@ -20,15 +22,11 @@ export default function DressCode({ content }) {
         return;
       }
 
-      const rect = section.getBoundingClientRect();
-      const start = window.innerHeight * 0.82;
-      const distance = rect.height + window.innerHeight * 0.35;
-      const progress = Math.max(0, Math.min(1, (start - rect.top) / distance));
-      const isDesktop = window.innerWidth >= 768;
-      const apertureStart = isDesktop ? 0.4 : 0.58;
-      const apertureDuration = isDesktop ? 0.2 : 0.32;
-      const aperture = Math.max(0, Math.min(1, (progress - apertureStart) / apertureDuration));
-      section.style.setProperty("--scope-progress", progress.toFixed(3));
+      const scopeRect = scopeTrack.getBoundingClientRect();
+      const startLine = window.innerHeight * 0.9;
+      const travel = window.innerWidth >= 768 ? window.innerHeight * 0.34 : window.innerHeight * 0.48;
+      const aperture = Math.max(0, Math.min(1, (startLine - scopeRect.top) / travel));
+      section.style.setProperty("--scope-progress", aperture.toFixed(3));
       section.style.setProperty("--scope-open", aperture.toFixed(3));
     };
 
@@ -92,7 +90,7 @@ export default function DressCode({ content }) {
           <img className="wine-stain wine-stain-splash" src="/images/wine-stains/splash-left.png" alt="" loading="lazy" decoding="async" />
           <img className="wine-stain wine-stain-drops" src="/images/wine-stains/drops-top.png" alt="" loading="lazy" decoding="async" />
         </div>
-        <div className="otto-scope-track" aria-label="Agente Otto 007, seguridad del dress code">
+        <div ref={scopeTrackRef} className="otto-scope-track" aria-label="Agente Otto 007, seguridad del dress code">
           <div className="otto-scope">
             <div className="scope-blade scope-blade-1" />
             <div className="scope-blade scope-blade-2" />

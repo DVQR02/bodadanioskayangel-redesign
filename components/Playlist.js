@@ -16,10 +16,11 @@ export default function Playlist() {
 
       <article className="playlist-request">
         <p className="playlist-kicker">Una petición para la pista</p>
-        <h3>Regálanos una canción</h3>
+        <h3>Regálanos una canción <span>(o muchas)</span></h3>
         <p className="playlist-intro">
           Añadid ese tema que os hace levantaros de la silla, cantar a gritos o
-          recordar una noche que todavía da risa.
+          recordar una noche que todavía da risa. <strong>No hay límite de
+          canciones. Esto no es Ryanair, no cobramos por añadir otra.</strong>
         </p>
 
         <div className="playlist-steps" aria-label="Cómo participar">
@@ -36,7 +37,6 @@ export default function Playlist() {
         >
           {site.redes.spotifyPlaylistLabel} <span aria-hidden="true">↗</span>
         </a>
-        <p className="playlist-note">Una por persona. Elegid sabiamente… o no.</p>
       </article>
 
       {id && (

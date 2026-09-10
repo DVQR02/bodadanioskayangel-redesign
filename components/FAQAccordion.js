@@ -18,7 +18,6 @@ export default function FAQAccordion({ items }) {
   const [open, setOpen] = useState(null);
   return (
     <div className="faq-accordion">
-      <div className="faq-gold-mark" aria-hidden="true"><i /><span>◆</span><i /></div>
       {items.map((it, i) => {
         const isOpen = open === i;
         return (

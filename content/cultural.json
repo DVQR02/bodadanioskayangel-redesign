@@ -62,6 +62,11 @@
     { "venezolana": "Qué chévere", "espanola": "Qué guay", "significado": "La aprobación oficial: algo gusta, mola o ha salido especialmente bien." },
     { "venezolana": "Echar broma", "espanola": "Hacer el tonto", "significado": "Tomarse la vida con poca seriedad y muchas ganas de reírse." }
   ],
+  "perol": {
+    "palabra": "PEROL",
+    "venezuela": "Cualquier vaina que tenga forma de cosa. Vease también Coroto.",
+    "cordoba": "Excusa gastronómica para juntar a 20 personas alrededor de una olla, preferiblemente fuera de casa."
+  },
   "diplomacia": {
     "venezolana": "El coño de tu madre",
     "espanola": "Me cago en la hostia"

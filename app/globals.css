@@ -714,6 +714,7 @@ h1, h2, h3, h4 {
 .rsvp-letter-corner { position:absolute; width:3.5rem; height:3.5rem; opacity:.45; }.rsvp-letter-corner-one { top:.75rem; left:.75rem; border-top:1px solid var(--lavender-deep); border-left:1px solid var(--lavender-deep); }.rsvp-letter-corner-two { right:.75rem; bottom:.75rem; border-right:1px solid var(--ivy); border-bottom:1px solid var(--ivy); }
 .rsvp-overline { font-size:.6rem; letter-spacing:.34em; text-transform:uppercase; color:var(--lavender-deep); }
 .rsvp-letter h3 { margin:.65rem auto 0; font-family:'Cormorant Garamond',Georgia,serif; font-size:clamp(2.25rem,5vw,3.65rem); font-weight:500; line-height:1.02; color:var(--ink); }
+.rsvp-heading-note { max-width:29rem; margin:.65rem auto 0; font-family:'Arapey',Georgia,serif; font-size:.86rem; font-style:italic; line-height:1.4; color:rgba(41,37,35,.55); }
 .rsvp-copy { max-width:35rem; margin:1.2rem auto 0; font-family:'Arapey',Georgia,serif; font-size:1.05rem; line-height:1.55; color:rgba(41,37,35,.68); }
 .rsvp-deadline { max-width:27rem; margin:2rem auto 0; padding:1.35rem 1rem; border-top:1px solid rgba(114,83,154,.16); border-bottom:1px solid rgba(114,83,154,.16); }
 .rsvp-deadline > span { display:block; font-size:.56rem; letter-spacing:.25em; text-transform:uppercase; color:var(--ivy); }.rsvp-deadline strong { display:block; margin:.35rem 0; font-family:'Cormorant Garamond',Georgia,serif; font-size:1.65rem; font-weight:500; color:var(--ink); }.rsvp-deadline p { font-size:.76rem; line-height:1.4; color:rgba(41,37,35,.55); }

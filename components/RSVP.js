@@ -27,7 +27,8 @@ export default function RSVP() {
         <span className="rsvp-letter-corner rsvp-letter-corner-one" aria-hidden="true" />
         <span className="rsvp-letter-corner rsvp-letter-corner-two" aria-hidden="true" />
         <p className="rsvp-overline">Répondez s’il vous plaît</p>
-        <h3>¿Contamos contigo?</h3>
+        <h3>¿Nos acompañas?</h3>
+        <p className="rsvp-heading-note">Hay días que sólo tienen sentido cuando están las personas adecuadas.</p>
         <p className="rsvp-copy">Necesitamos algunos detalles para reservarte un lugar, preparar tu menú y asegurarnos de que puedas llegar, brindar y bailar con nosotros.</p>
         <div className="rsvp-deadline">
           <span>Confirma antes del</span>

@@ -119,7 +119,7 @@ export default function OurStory({ items }) {
   }, []);
 
   return (
-    <section className="our-story" aria-labelledby="our-story-title">
+    <section id="nuestra-historia" className="our-story scroll-mt-24" aria-labelledby="our-story-title">
       <Reveal className="story-heading">
         <p className="story-overline">Un nosotros, poco a poco</p>
         <h2 id="our-story-title">Nuestra historia</h2>

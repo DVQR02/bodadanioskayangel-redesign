@@ -1,24 +1,48 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import site from "@/content/site.json";
 
 const links = [
-  { href: "/#historia", label: "Nosotros" },
-  { href: "/#evento", label: "El Gran Día" },
-  { href: "/#viaje", label: "Cómo llegar" },
+  { href: "/#countdown", label: "Cuenta atrás" },
+  { href: "/#historia", label: "Conoce a los personajes" },
+  { href: "/#nuestra-historia", label: "Nuestra Historia" },
   { href: "/#cortejo", label: "El Cortejo" },
-  { href: "/#faq", label: "FAQ" },
+  { href: "/#evento", label: "El Gran Día" },
+  { href: "/#dresscode", label: "Dress Code" },
+  { href: "/#rsvp", label: "Confirma tu magia" },
+  { href: "/#viaje", label: "Las Piezas que faltan" },
+  { href: "/#galeria", label: "La Galería" },
+  { href: "/#playlist", label: "La Playlist" },
+  { href: "/#culturas", label: "Aprende a hablar como nosotros" },
+  { href: "/#faq", label: "Preguntas Frecuentes" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [desktopOpen, setDesktopOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const desktopMenuRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const closeMenu = (event) => {
+      if (!desktopMenuRef.current?.contains(event.target)) setDesktopOpen(false);
+    };
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setDesktopOpen(false);
+    };
+    document.addEventListener("pointerdown", closeMenu);
+    document.addEventListener("keydown", closeOnEscape);
+    return () => {
+      document.removeEventListener("pointerdown", closeMenu);
+      document.removeEventListener("keydown", closeOnEscape);
+    };
   }, []);
 
   return (
@@ -44,6 +68,8 @@ export default function Navbar() {
         <button
           onClick={() => setOpen((v) => !v)}
           aria-label="Menú"
+          aria-expanded={open}
+          aria-controls="mobile-section-menu"
           className="md:hidden p-2 text-lavanda-700"
         >
           <span className="navbar-hamburger-line block w-6 h-0.5 bg-lavanda-700 mb-1.5" />
@@ -51,17 +77,33 @@ export default function Navbar() {
           <span className="navbar-hamburger-line block w-6 h-0.5 bg-lavanda-700" />
         </button>
 
-        <ul className="hidden md:flex items-center gap-5 text-sm">
-          {links.map((l) => (
-            <li key={l.href}>
-              <Link
-                href={l.href}
-                className="navbar-link text-tinta/80 hover:text-lavanda-700 transition"
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
+        <ul className="hidden md:flex items-center gap-3 text-sm">
+          <li ref={desktopMenuRef} className="navbar-index-wrap">
+            <button
+              type="button"
+              className="navbar-menu-button"
+              aria-expanded={desktopOpen}
+              aria-controls="desktop-section-menu"
+              onClick={() => setDesktopOpen((value) => !value)}
+            >
+              Explorar <span aria-hidden="true">⌄</span>
+            </button>
+            {desktopOpen && (
+              <div id="desktop-section-menu" className="navbar-index-panel">
+                <p>Recorre la invitación</p>
+                <ul>
+                  {links.map((link, index) => (
+                    <li key={link.href}>
+                      <Link href={link.href} onClick={() => setDesktopOpen(false)}>
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </li>
           <li>
             <a
               href={site.redes.spotifyPlaylistUrl}
@@ -85,7 +127,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <ul className="mobile-nav-panel md:hidden bg-crema/95 backdrop-blur-md border-t border-lavanda-200 px-4 py-3 flex flex-col gap-3 text-sm">
+        <ul id="mobile-section-menu" className="mobile-nav-panel md:hidden bg-crema/95 backdrop-blur-md border-t border-lavanda-200 px-4 py-3 flex flex-col gap-3 text-sm">
           {links.map((l) => (
             <li key={l.href}>
               <Link

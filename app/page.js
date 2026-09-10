@@ -52,6 +52,11 @@ export default function Home() {
         <OurStory items={historia.timeline} />
       </Section>
 
+      {/* CORTEJO */}
+      <Section id="cortejo" elementId="wedding_party" title={cortejo.titulo} subtitle={cortejo.subtitulo}>
+        <WeddingPartyCarousel padres={cortejo.padres} personas={cortejo.personas} />
+      </Section>
+
       <SceneTransition variant="story-day" />
 
       {/* EVENTO — solo cronograma */}
@@ -67,6 +72,24 @@ export default function Home() {
       </Section>
 
       <SceneTransition variant="day-places" />
+
+      {/* DRESS CODE */}
+      <Section id="dresscode" elementId="color_guide" className="dresscode-scene">
+        <DressCode content={dresscode} />
+      </Section>
+
+      <SceneTransition variant="culture-dress" />
+
+      {/* RSVP */}
+      <Section
+        id="rsvp"
+        elementId="rsvp_form"
+        className="rsvp-scene"
+        title="Confirma tu magia"
+        subtitle="Una última pregunta antes de empezar la cuenta atrás"
+      >
+        <RSVP />
+      </Section>
 
       {/* VIAJE — mapa con puntos de interés + hoteles */}
       <Section id="viaje" elementId="venue_map" title={viaje.titulo} subtitle={viaje.subtitulo}>
@@ -102,40 +125,12 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* DICCIONARIO VENEKOESPAÑOL */}
-      <Section id="culturas" elementId="two_cultures" className="culture-scene" title="Aprende a hablar como nosotros" subtitle="Un pequeño diccionario para venezolanos, españoles y todo lo demás">
-        <CulturalDictionary content={cultural} />
-      </Section>
-
-      <SceneTransition variant="culture-dress" />
-
-      {/* DRESS CODE */}
-      <Section id="dresscode" elementId="color_guide" className="dresscode-scene">
-        <DressCode content={dresscode} />
-      </Section>
-
-      {/* CORTEJO */}
-      <Section id="cortejo" elementId="wedding_party" title={cortejo.titulo} subtitle={cortejo.subtitulo}>
-        <WeddingPartyCarousel padres={cortejo.padres} personas={cortejo.personas} />
-      </Section>
-
       {/* GALERÍA */}
       <Section id="galeria" elementId="gallery" className="gallery-scene" title={galeria.titulo} subtitle={galeria.subtitulo}>
         <GuestGallery album={galeria.albumCompartido} />
       </Section>
 
       <SceneTransition variant="gallery-rsvp" />
-
-      {/* RSVP */}
-      <Section
-        id="rsvp"
-        elementId="rsvp_form"
-        className="rsvp-scene"
-        title="Confirma tu magia"
-        subtitle="Una última pregunta antes de empezar la cuenta atrás"
-      >
-        <RSVP />
-      </Section>
 
       {/* PLAYLIST */}
       <Section
@@ -146,6 +141,11 @@ export default function Home() {
         subtitle="La banda sonora de la fiesta también lleva un poquito de vosotros"
       >
         <Playlist />
+      </Section>
+
+      {/* DICCIONARIO VENEKOESPAÑOL */}
+      <Section id="culturas" elementId="two_cultures" className="culture-scene" title="Aprende a hablar como nosotros" subtitle="Un pequeño diccionario para venezolanos, españoles y todo lo demás">
+        <CulturalDictionary content={cultural} />
       </Section>
 
       {/* FAQ completo */}

@@ -15,7 +15,7 @@ export default function GuestGallery({ album }) {
       <div className="gallery-composition">
         <Reveal className="gallery-polaroid gallery-polaroid-left" delay={100}>
           <img src="/images/gallery/danioska-angel-faro.jpg" alt="Danioska y Ángel junto a un faro de colores" loading="lazy" decoding="async" />
-          <span>Los bailes</span>
+          <span>Los viajes</span>
         </Reveal>
 
         <Reveal className="gallery-upload-card" delay={180}>
@@ -31,7 +31,7 @@ export default function GuestGallery({ album }) {
 
         <Reveal className="gallery-polaroid gallery-polaroid-right" delay={260}>
           <img src="/images/gallery/danioska-angel-aventura.jpg" alt="Danioska y Ángel en una de sus aventuras" loading="lazy" decoding="async" />
-          <span>Las aventuras</span>
+          <span>Las locuras</span>
         </Reveal>
       </div>
 
